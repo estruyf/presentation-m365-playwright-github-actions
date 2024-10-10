@@ -85,9 +85,9 @@ jobs:
           CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
 
   e2e_prod:
-    name: E2E Testing on test
+    name: E2E Testing on production
     runs-on: ubuntu-latest
-    environment: test
+    environment: production
     needs: deploy_prod
 
     steps:

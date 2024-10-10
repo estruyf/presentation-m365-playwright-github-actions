@@ -6,6 +6,10 @@ inputs:
     description: 'The working directory where the tests are located'
     required: false
     default: './e2e'
+  environment:
+    description: 'The environment to run the tests against'
+    required: true
+    default: 'dev'
   # Variables
   M365_PAGE_URL:
     description: 'URL of the environment'
@@ -72,13 +76,13 @@ runs:
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: snapshots
+        name: snapshots-${{ inputs.environment }}
         path: ${{ inputs.working-directory }}/tests/**/*-snapshots/
         retention-days: 30
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: report
+        name: report-${{ inputs.environment }}
         path: ${{ inputs.working-directory }}/playwright-report/
         retention-days: 30

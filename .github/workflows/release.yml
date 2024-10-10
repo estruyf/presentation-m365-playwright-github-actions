@@ -2,9 +2,9 @@ name: Release
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 
 jobs:
   build:
@@ -23,7 +23,9 @@ jobs:
   deploy_test:
     name: Deploy to test
     runs-on: ubuntu-latest
-    environment: test
+    environment:
+      name: test
+      url: ${{ vars.M365_PAGE_URL }}
     needs: build
 
     steps:
@@ -64,7 +66,9 @@ jobs:
   deploy_prod:
     name: Deploy to production
     runs-on: ubuntu-latest
-    environment: production
+    environment:
+      name: production
+      url: ${{ vars.M365_PAGE_URL }}
     needs: e2e_test
 
     steps:

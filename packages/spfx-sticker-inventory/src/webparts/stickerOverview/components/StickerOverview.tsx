@@ -97,8 +97,8 @@ export const StickerOverview: React.FunctionComponent<IStickerOverviewProps> = (
         )
       }
 
-      <div className='flex justify-between'>
-        <div className='flex gap-4 mb-4'>
+      <div className='flex justify-between items-center mb-4'>
+        <div className='flex gap-4 w-2/3'>
           <TextField
             placeholder='Filter by stock'
             value={filter}
@@ -115,7 +115,7 @@ export const StickerOverview: React.FunctionComponent<IStickerOverviewProps> = (
         </div>
 
         <div
-          className='text-lg font-bold'
+          className='text-lg font-bold w-1/3 text-right'
           data-testid="sticker_inventory__refresh">
           Last refresh: {(new Date()).toLocaleTimeString()}
         </div>

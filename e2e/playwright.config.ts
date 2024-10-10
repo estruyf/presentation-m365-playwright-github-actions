@@ -85,6 +85,7 @@ if (config.reporter && config.reporter instanceof Array) {
         webhookUrl: process.env.M365_WEBHOOK_URL,
         webhookType: "powerautomate",
         linkToResultsUrl: runUrl,
+        mentionOnFailure: process.env.M365_USERNAME,
       },
     ]);
   } else {

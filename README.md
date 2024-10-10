@@ -13,6 +13,12 @@
 - `M365_PASSWORD`
 - `M365_OTP_SECRET`
 
+## Links
+
+- <https://slides.elio.dev>
+- <https://mysignins.microsoft.com/security-info>
+- <https://make.powerautomate.com/>
+
 ## Clean up after the session
 
 Remove all workflow runs:

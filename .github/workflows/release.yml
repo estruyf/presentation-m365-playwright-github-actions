@@ -17,8 +17,8 @@ jobs:
       - name: Build SPPKG
         uses: ./.github/actions/build
         with:
-          ARTIFACT_NAME: "pointfire-express-app"
-          PACKAGE_FOLDER: "./packages/pointfire-express-app"
+          ARTIFACT_NAME: pointfire-express-app
+          PACKAGE_FOLDER: packages/pointfire-express-app
 
   deploy_test:
     name: Deploy SPFx to test environment
@@ -32,8 +32,8 @@ jobs:
       - name: Deploy SPFx
         uses: ./.github/actions/deploy
         with:
-          ARTIFACT_NAME: "pointfire-express-app"
-          PACKAGE_NAME: "pointfire-express-app.sppkg"
+          ARTIFACT_NAME: pointfire-express-app
+          PACKAGE_NAME: pointfire-express-app.sppkg
           ENTRA_TENANT_ID: ${{ vars.ENTRA_TENANT_ID }}
           ENTRA_APP_ID: ${{ vars.ENTRA_APP_ID }}
           APP_CATALOG_URL: ${{ vars.APP_CATALOG_URL }}

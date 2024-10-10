@@ -39,7 +39,7 @@ runs:
         cd dist
 
         # Login
-        npx -p @pnp/cli-microsoft365 -- m365 login --authType certificate --tenant "${{ inputs.ENTRA_TENANT_ID }}" --appId "${{ inputs.ENTRA_APP_ID }}" --certificateBase64Encoded "${{ secrets.CERTIFICATE_BASE64 }}"
+        npx -p @pnp/cli-microsoft365 -- m365 login --authType certificate --tenant "${{ inputs.ENTRA_TENANT_ID }}" --appId "${{ inputs.ENTRA_APP_ID }}" --certificateBase64Encoded "${{ inputs.CERTIFICATE_BASE64 }}"
 
         # Add the solution
         npx -p @pnp/cli-microsoft365 -- m365 spo app add --appCatalogUrl "${{ inputs.APP_CATALOG_URL }}" --filePath ${{ inputs.PACKAGE_NAME }} --overwrite

@@ -28,10 +28,10 @@ runs:
   using: composite
   steps:
     - uses: actions/setup-node@v4
-      working-directory: ${{ inputs.working-directory }}
       with:
         node-version: 20
         cache: npm
+        cache-dependency-path: ${{ inputs.working-directory }}/package-lock.json
 
     - name: Install dependencies
       shell: bash
@@ -49,7 +49,6 @@ runs:
     - name: Cache Playwright Browsers for Playwright's Version
       id: cache-playwright-browsers
       uses: actions/cache@v4
-      working-directory: ${{ inputs.working-directory }}
       with:
         path: ~/.cache/ms-playwright
         key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
@@ -72,16 +71,14 @@ runs:
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
-      working-directory: ${{ inputs.working-directory }}
       with:
         name: snapshots
-        path: tests/**/*-snapshots/
+        path: ${{ inputs.working-directory }}/tests/**/*-snapshots/
         retention-days: 30
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
-      working-directory: ${{ inputs.working-directory }}
       with:
         name: report
-        path: playwright-report/
+        path: ${{ inputs.working-directory }}/playwright-report/
         retention-days: 30

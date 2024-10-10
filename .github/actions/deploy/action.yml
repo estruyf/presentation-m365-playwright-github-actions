@@ -1,0 +1,48 @@
+name: Deploy SPFx
+description: Deploy SPFx to SharePoint Online
+
+inputs:
+  ARTIFACT_NAME:
+    description: "Name of the artifact to download"
+    required: true
+  PACKAGE_NAME:
+    description: "Name of the package to deploy"
+    required: true
+  # Variables
+  ENTRA_TENANT_ID:
+    description: "Tenant ID to use for deployment"
+    required: true
+  ENTRA_APP_ID:
+    description: "App ID to use for deployment"
+    required: true
+  APP_CATALOG_URL:
+    description: "URL of the app catalog"
+    required: true
+  # Secrets
+  CERTIFICATE_BASE64:
+    description: "Base64 encoded certificate"
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Download the artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: ${{ inputs.ARTIFACT_NAME }}
+        path: dist
+
+    - name: Deploy to SharePoint
+      shell: bash
+      run: |
+        # Navigate to the folder with the artifact
+        cd dist
+
+        # Login
+        npx -p @pnp/cli-microsoft365 -- m365 login --authType certificate --tenant "${{ inputs.ENTRA_TENANT_ID }}" --appId "${{ inputs.ENTRA_APP_ID }}" --certificateBase64Encoded "${{ secrets.CERTIFICATE_BASE64 }}"
+
+        # Add the solution
+        npx -p @pnp/cli-microsoft365 -- m365 spo app add --appCatalogUrl "${{ inputs.APP_CATALOG_URL }}" --filePath ${{ inputs.PACKAGE_NAME }} --overwrite
+
+        # Deploy the solution
+        npx -p @pnp/cli-microsoft365 -- m365 spo app deploy --name ${{ inputs.PACKAGE_NAME }}

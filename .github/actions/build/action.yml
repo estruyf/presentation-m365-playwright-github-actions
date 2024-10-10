@@ -1,0 +1,32 @@
+name: Build SPPKG
+description: Build the SPFx solution
+
+inputs:
+  ARTIFACT_NAME:
+    description: "Name of the artifact to upload"
+    required: true
+  PACKAGE_FOLDER:
+    description: "Name of the main folder of the package"
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 18
+        cache: 'npm'
+        cache-dependency-path: ${{ inputs.PACKAGE_FOLDER }}/package-lock.json
+
+    - name: Install dependencies
+      working-directory: ${{ inputs.PACKAGE_FOLDER }}
+      run: |
+        npm ci
+        gulp bundle --ship
+        gulp package-solution --ship
+
+    - name: Upload sppkg
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ inputs.ARTIFACT_NAME }}
+        path: ${{ inputs.PACKAGE_FOLDER }}/sharepoint/solution/*.sppkg

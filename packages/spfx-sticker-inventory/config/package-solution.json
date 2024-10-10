@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "sticker-inventory-client-side-solution",
+    "id": "1aa9945e-0389-4677-b8d8-2b0c812fd52c",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "sticker-inventory description"
+      },
+      "longDescription": {
+        "default": "sticker-inventory description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [{
+      "title": "sticker-inventory Feature",
+      "description": "The feature that activates elements of the sticker-inventory solution.",
+      "id": "6898f7f5-5884-4f3f-963b-7b48d00ea6ce",
+      "version": "1.0.0.0"
+    }]
+  },
+  "paths": {
+    "zippedPackage": "solution/sticker-inventory.sppkg"
+  }
+}

@@ -1,0 +1,7 @@
+:global {
+  .sticker_inventory .grid {
+    &::before, &::after {
+      display: none !important;
+    }
+  }
+}

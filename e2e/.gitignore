@@ -1,0 +1,13 @@
+node_modules/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+/screenshots/*.png
+.env
+/tests/**/*-darwin.png
+
+download.js
+*.zip
+.DS_STORE
+playwright

@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - complete
+      - main
       - dev
   pull_request:
     branches:
-      - complete
+      - main
       - dev
 
 jobs:

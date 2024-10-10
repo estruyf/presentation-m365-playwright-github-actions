@@ -31,7 +31,7 @@ runs:
       with:
         node-version: 20
         cache: npm
-        working-directory: ${{ inputs.working-directory }}
+        cache-dependency-path: ${{ inputs.working-directory }}/package-lock.json
 
     - run: cd ${{ inputs.working-directory }}
       shell: bash

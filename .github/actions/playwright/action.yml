@@ -27,13 +27,14 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: cd ${{ inputs.working-directory }}
-      shell: bash
-
     - uses: actions/setup-node@v4
       with:
         node-version: 20
         cache: npm
+        working-directory: ${{ inputs.working-directory }}
+
+    - run: cd ${{ inputs.working-directory }}
+      shell: bash
 
     - name: Install dependencies
       shell: bash
@@ -74,6 +75,7 @@ runs:
         name: snapshots
         path: tests/**/*-snapshots/
         retention-days: 30
+        working-directory: ${{ inputs.working-directory }}
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
@@ -81,3 +83,4 @@ runs:
         name: report
         path: playwright-report/
         retention-days: 30
+        working-directory: ${{ inputs.working-directory }}

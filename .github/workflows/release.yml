@@ -21,6 +21,7 @@ jobs:
     name: Deploy SPFx to test environment
     runs-on: ubuntu-latest
     environment: test
+    needs: build
 
     steps:
       - uses: actions/checkout@v4

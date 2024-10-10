@@ -28,20 +28,19 @@ runs:
   using: composite
   steps:
     - uses: actions/setup-node@v4
+      working-directory: ${{ inputs.working-directory }}
       with:
         node-version: 20
         cache: npm
-        cache-dependency-path: ${{ inputs.working-directory }}/package-lock.json
-
-    - run: cd ${{ inputs.working-directory }}
-      shell: bash
 
     - name: Install dependencies
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: npm ci
 
     - name: Store Playwright's Version
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: |
         PLAYWRIGHT_VERSION=$(npm ls @playwright/test --depth=0 | grep @playwright | sed 's/.*@//')
         echo "Playwright's Version: $PLAYWRIGHT_VERSION"
@@ -50,6 +49,7 @@ runs:
     - name: Cache Playwright Browsers for Playwright's Version
       id: cache-playwright-browsers
       uses: actions/cache@v4
+      working-directory: ${{ inputs.working-directory }}
       with:
         path: ~/.cache/ms-playwright
         key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
@@ -62,6 +62,7 @@ runs:
     - name: Run Playwright tests
       run: npx playwright test
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       env:
         M365_PAGE_URL: ${{ inputs.M365_PAGE_URL }}
         M365_USERNAME: ${{ inputs.M365_USERNAME }}
@@ -71,16 +72,16 @@ runs:
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
+      working-directory: ${{ inputs.working-directory }}
       with:
         name: snapshots
         path: tests/**/*-snapshots/
         retention-days: 30
-        working-directory: ${{ inputs.working-directory }}
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
+      working-directory: ${{ inputs.working-directory }}
       with:
         name: report
         path: playwright-report/
         retention-days: 30
-        working-directory: ${{ inputs.working-directory }}

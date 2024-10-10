@@ -20,6 +20,7 @@ runs:
 
     - name: Install dependencies
       working-directory: ${{ inputs.PACKAGE_FOLDER }}
+      shell: bash
       run: |
         npm ci
         gulp bundle --ship

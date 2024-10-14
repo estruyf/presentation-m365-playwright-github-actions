@@ -1,0 +1,16 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "6.the_end",
+  "description": "",
+  "demos": [{
+      "title": "🪧 The end",
+      "steps": [{
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/64"
+        }
+      }]
+    }
+  ]
+}

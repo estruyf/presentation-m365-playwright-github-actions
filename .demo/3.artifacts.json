@@ -3,7 +3,7 @@
   "title": "3.artifacts",
   "description": "",
   "demos": [{
-      "title": "🪧 Automation",
+      "title": "🪧 Artifacts",
       "steps": [{
         "action": "snippet",
         "contentPath": "./defaults/show_slide.json",

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "5.release",
+  "description": "",
+  "demos": [{
+      "title": "🪧 Release",
+      "steps": [{
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/58"
+        }
+      }]
+    },
+    {
+      "title": "1. Release flow",
+      "steps": [{
+        "action": "create",
+        "path": ".github/workflows/e2e.yml",
+        "contentPath": "5.release/step1.yml"
+      },
+      {
+        "action": "open",
+        "path": ".github/workflows/e2e.yml"
+      }]
+    },
+    {
+      "title": "2. Build",
+      "steps": [{
+        "action": "unselect",
+        "path": ".github/workflows/e2e.yml"
+      },
+      {
+        "action": "highlight",
+        "position": "10:21",
+        "path": ".github/workflows/e2e.yml"
+      }]
+    },
+    {
+      "title": "3. Build action",
+      "steps": [
+      {
+        "action": "open",
+        "path": ".github/actions/build/action.yml"
+      }]
+    },
+    {
+      "title": "4. Deploy to test",
+      "steps": [{
+        "action": "unselect",
+        "path": ".github/workflows/e2e.yml"
+      },
+      {
+        "action": "highlight",
+        "position": "23:42",
+        "path": ".github/workflows/e2e.yml"
+      }]
+    },
+    {
+      "title": "5. Deploy action",
+      "steps": [
+      {
+        "action": "open",
+        "path": ".github/actions/deploy/action.yml"
+      }]
+    },
+    {
+      "title": "4. E2E on test",
+      "steps": [{
+        "action": "unselect",
+        "path": ".github/workflows/e2e.yml"
+      },
+      {
+        "action": "highlight",
+        "position": "44:65",
+        "path": ".github/workflows/e2e.yml"
+      }]
+    },
+    {
+      "title": "5. E2E action",
+      "steps": [
+      {
+        "action": "open",
+        "path": ".github/actions/playwright/action.yml"
+      }]
+    },
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "4.reporting",
+  "description": "",
+  "demos": [{
+      "title": "🪧 Reporting",
+      "steps": [{
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/49"
+        }
+      }]
+    },
+    {
+      "title": "1. Add GH Actions Reporter",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/insert_and_highlight.json",
+          "args": {
+            "MAIN_FILE": "e2e/playwright.config.ts",
+            "CONTENT_PATH": "./4.reporting/step1.ts",
+            "CONTENT_POSITION": "70",
+            "HIGHLIGHT_POSITION": "71:78"
+          }
+        }
+      ]
+    },
+    {
+      "title": "🪧 Notifying",
+      "steps": [{
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/54"
+        }
+      }]
+    },
+    {
+      "title": "2. Webhook creation",
+      "steps": [{
+        "action": "executeVSCodeCommand",
+        "command": "vscode.open",
+        "args": "https://make.preview.powerautomate.com/galleries/public/templates/d271a6f01c2545a28348d8f2cddf4c8f/post-to-a-channel-when-a-webhook-request-is-received"
+      }]
+    },
+    {
+      "title": "3. Add reporter",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/insert_and_highlight.json",
+          "args": {
+            "MAIN_FILE": "e2e/playwright.config.ts",
+            "CONTENT_PATH": "./4.reporting/step2.ts",
+            "CONTENT_POSITION": "78",
+            "HIGHLIGHT_POSITION": "87:95"
+          }
+        }
+      ]
+    },
+    {
+      "title": "4. Update workflow",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/insert_and_highlight.json",
+          "args": {
+            "MAIN_FILE": ".github/workflows/e2e.yml",
+            "CONTENT_PATH": "./4.reporting/step3.yml",
+            "CONTENT_POSITION": "50",
+            "HIGHLIGHT_POSITION": "51"
+          }
+        }
+      ]
+    },
+    {
+      "title": "5. Commit and run",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "git add . && git commit -m 'Reporting' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"
+        }
+      ]
+    }
+  ]
+}

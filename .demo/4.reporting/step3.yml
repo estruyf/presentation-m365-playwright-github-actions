@@ -1,0 +1,2 @@
+          M365_PAGE_URL: ${{ vars.M365_PAGE_URL }}
+          M365_WEBHOOK_URL: ${{ vars.M365_WEBHOOK_URL }}

@@ -3,5 +3,6 @@
   "remoteControl.port": 37105,
   "files.associations": {
     "**/.demo/**/*.json": "jsonc"
-  }
+  },
+  "demoTime.highlightBorderColor": "rgb(241, 65, 168)"
 }

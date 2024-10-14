@@ -1,17 +1,17 @@
 [
   {
     "action": "unselect",
-    "path": "/.github/workflows/main.yml"
+    "path": "{MAIN_FILE}"
   },
   {
     "action": "insert",
-    "path": "/.github/workflows/main.yml",
+    "path": "{MAIN_FILE}",
     "contentPath": "{CONTENT_PATH}",
     "position": "{CONTENT_POSITION}"
   },
   {
     "action": "highlight",
-    "path": "/.github/workflows/main.yml",
+    "path": "{MAIN_FILE}",
     "position": "{HIGHLIGHT_POSITION}"
   }
 ]

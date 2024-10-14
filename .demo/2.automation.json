@@ -1,0 +1,78 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "2.automation",
+  "description": "",
+  "demos": [{
+      "title": "🪧 Automation",
+      "steps": [{
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/26"
+        }
+      }]
+    },
+    {
+      "title": "1. The repository",
+      "steps": [{
+        "action": "executeVSCodeCommand",
+        "command": "vscode.open",
+        "args": "https://github.com/estruyf/presentation-m365-playwright-github-actions"
+      }]
+    },
+    {
+      "title": "🪧 Step 2",
+      "steps": [{
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/35"
+        }
+      }]
+    },
+    {
+      "title": "2. Create workflow",
+      "steps": [{
+        "action": "create",
+        "path": ".github/workflows/e2e.yml",
+        "contentPath": "2.automation/step1.yml"
+      },
+      {
+        "action": "open",
+        "path": ".github/workflows/e2e.yml"
+      }]
+    },
+    {
+      "title": "3. Highlight work dir",
+      "steps": [{
+        "action": "highlight",
+        "path": ".github/workflows/e2e.yml",
+        "position": "15:17"
+      }]
+    },
+    {
+      "title": "4. Add Playwright",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/insert_and_highlight.json",
+          "args": {
+            "MAIN_FILE": ".github/workflows/e2e.yml",
+            "CONTENT_PATH": "2.automation/step3.yml",
+            "CONTENT_POSITION": "22",
+            "HIGHLIGHT_POSITION": ""
+          }
+        }
+      ]
+    },
+    {
+      "title": "5. Commit and run first tests",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "git add . && git commit -m '5. Commit and run first tests' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"
+        }
+      ]
+    }
+  ]
+}

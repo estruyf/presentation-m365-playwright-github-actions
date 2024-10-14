@@ -1,0 +1,22 @@
+name: E2E Testing
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  testing:
+    name: Testing
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./e2e
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4

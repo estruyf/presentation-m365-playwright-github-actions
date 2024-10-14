@@ -13,6 +13,7 @@
       }]
     },
     {
+      "id": "2.automation.show_repository",
       "title": "1. The repository",
       "steps": [{
         "action": "executeVSCodeCommand",
@@ -31,6 +32,7 @@
       }]
     },
     {
+      "id": "2.automation.create_workflow",
       "title": "2. Create workflow",
       "steps": [{
         "action": "create",
@@ -51,6 +53,7 @@
       }]
     },
     {
+      "id": "2.automation.add_playwright",
       "title": "4. Add Playwright",
       "steps": [
         {

@@ -13,6 +13,7 @@
       }]
     },
     {
+      "id": "3.artifacts.upload_artifacts",
       "title": "1. Upload artifacts",
       "steps": [{
         "action": "create",

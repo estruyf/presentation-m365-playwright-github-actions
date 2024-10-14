@@ -13,6 +13,7 @@
       }]
     },
     {
+      "id": "4.reporting.github_actions_reporter",
       "title": "1. Add GH Actions Reporter",
       "steps": [
         {
@@ -38,6 +39,7 @@
       }]
     },
     {
+      "id": "4.reporting.webhook_creation",
       "title": "2. Webhook creation",
       "steps": [{
         "action": "executeVSCodeCommand",

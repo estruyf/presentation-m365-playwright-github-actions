@@ -13,6 +13,7 @@
       }]
     },
     {
+      "id": "1.recap.show_web_part",
       "title": "1. Show web part",
       "steps": [{
         "action": "executeVSCodeCommand",
@@ -21,6 +22,7 @@
       }]
     },
     {
+      "id": "1.recap.show_tests",
       "title": "2. Show tests",
       "steps": [{
         "action": "open",
@@ -38,6 +40,7 @@
       }]
     },
     {
+      "id": "1.recap.run_tests",
       "title": "3. Run tests",
       "steps": [{
         "action": "executeTerminalCommand",
@@ -55,6 +58,7 @@
       }]
     },
     {
+      "id": "1.recap.security_config",
       "title": "4. Security config",
       "steps": [{
         "action": "executeVSCodeCommand",
@@ -83,6 +87,7 @@
       }]
     },
     {
+      "id": "1.recap.show_login_process",
       "title": "6. Show login flow",
       "steps": [{
         "action": "open",

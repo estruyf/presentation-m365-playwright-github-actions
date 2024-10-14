@@ -13,6 +13,7 @@
       }]
     },
     {
+      "id": "5.release.update_release",
       "title": "1. Release flow",
       "steps": [{
         "action": "create",
@@ -25,7 +26,16 @@
       }]
     },
     {
-      "title": "2. Build",
+      "title": "2. Commit and run",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "git add . && git commit -m 'Time to release' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"
+        }
+      ]
+    },
+    {
+      "title": "3. Build",
       "steps": [{
         "action": "unselect",
         "path": ".github/workflows/e2e.yml"
@@ -37,7 +47,7 @@
       }]
     },
     {
-      "title": "3. Build action",
+      "title": "4. Build action",
       "steps": [
       {
         "action": "open",
@@ -45,7 +55,7 @@
       }]
     },
     {
-      "title": "4. Deploy to test",
+      "title": "5. Deploy to test",
       "steps": [{
         "action": "unselect",
         "path": ".github/workflows/e2e.yml"
@@ -57,7 +67,7 @@
       }]
     },
     {
-      "title": "5. Deploy action",
+      "title": "6. Deploy action",
       "steps": [
       {
         "action": "open",
@@ -65,7 +75,7 @@
       }]
     },
     {
-      "title": "4. E2E on test",
+      "title": "7. E2E on test",
       "steps": [{
         "action": "unselect",
         "path": ".github/workflows/e2e.yml"
@@ -77,7 +87,7 @@
       }]
     },
     {
-      "title": "5. E2E action",
+      "title": "8. E2E action",
       "steps": [
       {
         "action": "open",

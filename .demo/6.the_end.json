@@ -8,7 +8,7 @@
         "action": "snippet",
         "contentPath": "./defaults/show_slide.json",
         "args": {
-          "SLIDES_URL": "http://localhost:3030/64"
+          "SLIDES_URL": "http://localhost:3030/67"
         }
       }]
     }

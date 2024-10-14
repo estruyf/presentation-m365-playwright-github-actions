@@ -70,7 +70,7 @@
       "steps": [
         {
           "action": "executeTerminalCommand",
-          "command": "git add . && git commit -m '5. Commit and run first tests' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"
+          "command": "git add . && git commit -m 'First test run' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"
         }
       ]
     }

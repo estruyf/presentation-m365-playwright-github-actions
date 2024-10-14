@@ -1,0 +1,42 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "3.artifacts",
+  "description": "",
+  "demos": [{
+      "title": "🪧 Automation",
+      "steps": [{
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/43"
+        }
+      }]
+    },
+    {
+      "title": "1. Upload artifacts",
+      "steps": [{
+        "action": "create",
+        "path": ".github/workflows/e2e.yml",
+        "contentPath": "3.artifacts/step1.yml"
+      },
+      {
+        "action": "open",
+        "path": ".github/workflows/e2e.yml"
+      },
+      {
+        "action": "highlight",
+        "position": "55:67",
+        "path": ".github/workflows/e2e.yml"
+      }]
+    },
+    {
+      "title": "2. Commit and run",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "git add . && git commit -m 'Added artifacts' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"
+        }
+      ]
+    }
+  ]
+}

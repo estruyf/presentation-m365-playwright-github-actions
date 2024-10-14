@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@estruyf/github-actions-reporter": "^1.9.2",
+    "@estruyf/github-actions-reporter": "^1.10.0-beta.1128978",
     "otpauth": "^9.3.4",
     "playwright-msteams-reporter": "^0.0.11"
   }

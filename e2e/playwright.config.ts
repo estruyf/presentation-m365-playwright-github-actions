@@ -77,7 +77,11 @@ if (config.reporter && config.reporter instanceof Array) {
     config.reporter.push(["html"]);
     config.reporter.push([
       "@estruyf/github-actions-reporter",
-      { showError: true },
+      {
+        showError: true,
+        azureStorageSAS: process.env.AZURE_STORAGE_SAS,
+        azureStorageUrl: process.env.AZURE_STORAGE_URL,
+      },
     ]);
     config.reporter.push([
       "playwright-msteams-reporter",

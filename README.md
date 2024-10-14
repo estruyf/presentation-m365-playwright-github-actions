@@ -19,9 +19,14 @@
 - <https://mysignins.microsoft.com/security-info>
 - <https://make.powerautomate.com/>
 
+## Starting a new talk
+
+- Create a new `dev` branch
+
 ## Clean up after the session
 
-Remove all workflow runs:
+- Remove the `dev` branch
+- Remove all workflow runs:
 
 ```bash
 repo=$(gh repo view --json nameWithOwner | jq -r .nameWithOwner)

@@ -11,18 +11,18 @@ setup("authenticate", async ({ page }) => {
     return;
   }
 
-  await page.goto(process.env.SP_DEV_PAGE_URL || "");
+  await page.goto(process.env.M365_PAGE_URL || "");
 
-  page.locator("input[type=email]").fill(process.env.SP_DEV_USERNAME || "");
+  page.locator("input[type=email]").fill(process.env.M365_USERNAME || "");
 
   await page.getByRole("button", { name: "Next" }).click();
 
-  page.locator("input[type=password]").fill(process.env.SP_DEV_PASSWORD || "");
+  page.locator("input[type=password]").fill(process.env.M365_PASSWORD || "");
 
   await Promise.all([
     await page.locator("input[type=submit][value='Sign in']").click(),
     await page.locator("input[type=submit][value='Yes']").click(),
-    await page.waitForURL(process.env.SP_DEV_PAGE_URL || ""),
+    await page.waitForURL(process.env.M365_PAGE_URL || ""),
   ]);
 
   await page.context().storageState({ path: authFile });

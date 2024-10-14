@@ -1,0 +1,7 @@
+{
+  "remoteControl.enable": true,
+  "remoteControl.port": 37105,
+  "files.associations": {
+    "**/.demo/**/*.json": "jsonc"
+  }
+}

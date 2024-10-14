@@ -4,10 +4,6 @@ import { existsSync } from "fs";
 
 const AuthFile = "playwright/.auth/user.json";
 
-/**
- * Login to Microsoft 365
- * More info: https://playwright.dev/docs/auth
- */
 setup("authenticate", async ({ page }) => {
   if (existsSync(AuthFile)) {
     return;

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "0.defaults",
+  "description": "",
+  "demos": [{
+    "title": "🪧 Open slides",
+    "steps": [
+      // Clear the auth folder
+      {
+        "action": "executeTerminalCommand",
+        "command": "rm -rf ./e2e/playwright"
+      },
+      {
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/"
+        }
+      }
+    ]
+  }]
+}

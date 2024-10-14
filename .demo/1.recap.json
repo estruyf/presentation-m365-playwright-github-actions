@@ -1,0 +1,103 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "1.recap",
+  "description": "",
+  "demos": [{
+      "title": "🪧 Recap",
+      "steps": [{
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/4"
+        }
+      }]
+    },
+    {
+      "title": "1. Show web part",
+      "steps": [{
+        "action": "executeVSCodeCommand",
+        "command": "vscode.open",
+        "args": "https://struyfconsultingdev.sharepoint.com/sites/Playwright"
+      }]
+    },
+    {
+      "title": "2. Show tests",
+      "steps": [{
+        "action": "open",
+        "path": "e2e/tests/pages/sharepoint.spec.ts"
+      }]
+    },
+    {
+      "title": "🪧 Running the tests",
+      "steps": [{
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/14"
+        }
+      }]
+    },
+    {
+      "title": "3. Run tests",
+      "steps": [{
+        "action": "executeTerminalCommand",
+        "command": "cd e2e && npm run test:ui"
+      }]
+    },
+    {
+      "title": "🪧 Auth",
+      "steps": [{
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/15"
+        }
+      }]
+    },
+    {
+      "title": "4. Security config",
+      "steps": [{
+        "action": "executeVSCodeCommand",
+        "command": "vscode.open",
+        "args": "https://mysignins.microsoft.com/security-info"
+      }]
+    },
+    {
+      "title": "5. Generate TOPT",
+      "steps": [{
+        "action": "executeVSCodeCommand",
+        "command": "workbench.action.terminal.new"
+      }, {
+        "action": "executeTerminalCommand",
+        "command": "clipboard=\"$(pbpaste)\" && node ./e2e/scripts/2fa.test.mjs $clipboard"
+      }]
+    },
+    {
+      "title": "🪧 Login process",
+      "steps": [{
+        "action": "snippet",
+        "contentPath": "./defaults/show_slide.json",
+        "args": {
+          "SLIDES_URL": "http://localhost:3030/24"
+        }
+      }]
+    },
+    {
+      "title": "6. Show login flow",
+      "steps": [{
+        "action": "open",
+        "path": "e2e/tests/login.setup.ts"
+      }]
+    },
+    {
+      "title": "7. Update login flow",
+      "steps": [
+        {
+          "action": "create",
+          "path": "e2e/tests/login.setup.ts",
+          "contentPath": "./1.recap/mfa.setup.ts"
+        }
+      ]
+    }
+  ]
+}

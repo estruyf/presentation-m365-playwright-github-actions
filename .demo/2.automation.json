@@ -22,6 +22,14 @@
       }]
     },
     {
+      "title": "2. Configure the TOPT",
+      "steps": [{
+        "action": "executeVSCodeCommand",
+        "command": "vscode.open",
+        "args": "https://github.com/estruyf/presentation-m365-playwright-github-actions/settings/secrets/actions"
+      }]
+    },
+    {
       "title": "🪧 Step 2",
       "steps": [{
         "action": "snippet",
@@ -33,7 +41,7 @@
     },
     {
       "id": "2.automation.create_workflow",
-      "title": "2. Create workflow",
+      "title": "3. Create workflow",
       "steps": [{
         "action": "create",
         "path": ".github/workflows/e2e.yml",
@@ -45,7 +53,7 @@
       }]
     },
     {
-      "title": "3. Highlight work dir",
+      "title": "4. Highlight work dir",
       "steps": [{
         "action": "highlight",
         "path": ".github/workflows/e2e.yml",
@@ -54,7 +62,7 @@
     },
     {
       "id": "2.automation.add_playwright",
-      "title": "4. Add Playwright",
+      "title": "5. Add Playwright",
       "steps": [
         {
           "action": "snippet",
@@ -69,7 +77,7 @@
       ]
     },
     {
-      "title": "5. Commit and run first tests",
+      "title": "6. Commit and run first tests",
       "steps": [
         {
           "action": "executeTerminalCommand",

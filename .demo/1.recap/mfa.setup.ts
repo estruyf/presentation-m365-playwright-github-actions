@@ -23,7 +23,7 @@ setup("authenticate", async ({ page }) => {
 
   // Check if there is an Microsft Authenticator app prompt
   const otherWayLink = page.locator("a#signInAnotherWay");
-  await otherWayLink.waitFor({ timeout: 2000 });
+  await otherWayLink.waitFor({ timeout: 5000 });
   if (await otherWayLink.isVisible()) {
     await otherWayLink.click();
 

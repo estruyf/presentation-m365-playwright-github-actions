@@ -8,7 +8,7 @@
   "license": "ISC",
   "scripts": {
     "test": "NODE_ENV=development npx playwright test",
-    "test:ui": "NODE_ENV=development npx playwright test --ui --update-snapshots",
+    "test:ui": "NODE_ENV=development npx playwright test --ui",
     "test:update": "NODE_ENV=development npx playwright test --update-snapshots",
     "debug": "NODE_ENV=development npx playwright test --debug"
   },

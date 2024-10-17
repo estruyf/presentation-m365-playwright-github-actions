@@ -2,6 +2,22 @@
 
 ## Configuration
 
+In the `e2e` directory, create a `.env` file with the following content:
+
+```bash
+M365_PAGE_URL=
+M365_WEBHOOK_URL=
+
+M365_USERNAME=
+M365_PASSWORD=
+```
+
+For the TOPT token, create a `.env.token` file with the following content:
+
+```bash
+M365_OTP_SECRET=
+```
+
 ### Variables
 
 - `M365_PAGE_URL`

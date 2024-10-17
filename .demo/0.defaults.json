@@ -5,10 +5,18 @@
   "demos": [{
     "title": "🪧 Open slides",
     "steps": [
+      {
+        "action": "executeVSCodeCommand",
+        "command": "workbench.action.terminal.killAll"
+      },
       // Clear the auth folder
       {
         "action": "executeTerminalCommand",
         "command": "rm -rf ./e2e/playwright"
+      },
+      {
+        "action": "executeTerminalCommand",
+        "command": "touch ./e2e/.env && touch ./e2e/.env.token"
       },
       {
         "action": "snippet",

@@ -2,15 +2,18 @@
   "$schema": "https://elio.dev/demo-time.schema.json",
   "title": "4.reporting",
   "description": "",
-  "demos": [{
+  "demos": [
+    {
       "title": "🪧 Reporting",
-      "steps": [{
-        "action": "snippet",
-        "contentPath": "./defaults/show_slide.json",
-        "args": {
-          "SLIDES_URL": "http://localhost:3030/49"
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/49"
+          }
         }
-      }]
+      ]
     },
     {
       "id": "4.reporting.github_actions_reporter",
@@ -30,22 +33,26 @@
     },
     {
       "title": "🪧 Notifying",
-      "steps": [{
-        "action": "snippet",
-        "contentPath": "./defaults/show_slide.json",
-        "args": {
-          "SLIDES_URL": "http://localhost:3030/54"
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/54"
+          }
         }
-      }]
+      ]
     },
     {
       "id": "4.reporting.webhook_creation",
       "title": "2. Webhook creation",
-      "steps": [{
-        "action": "executeVSCodeCommand",
-        "command": "vscode.open",
-        "args": "https://make.preview.powerautomate.com/galleries/public/templates/d271a6f01c2545a28348d8f2cddf4c8f/post-to-a-channel-when-a-webhook-request-is-received"
-      }]
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "vscode.open",
+          "args": "https://make.preview.powerautomate.com/galleries/public/templates/d271a6f01c2545a28348d8f2cddf4c8f/post-to-a-channel-when-a-webhook-request-is-received"
+        }
+      ]
     },
     {
       "title": "3. Add reporter",
@@ -80,6 +87,10 @@
     {
       "title": "5. Commit and run",
       "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.killAll"
+        },
         {
           "action": "executeTerminalCommand",
           "command": "git add . && git commit -m 'Reporting' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"

@@ -2,63 +2,76 @@
   "$schema": "https://elio.dev/demo-time.schema.json",
   "title": "2.automation",
   "description": "",
-  "demos": [{
+  "demos": [
+    {
       "title": "🪧 Automation",
-      "steps": [{
-        "action": "snippet",
-        "contentPath": "./defaults/show_slide.json",
-        "args": {
-          "SLIDES_URL": "http://localhost:3030/26"
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/26"
+          }
         }
-      }]
+      ]
     },
     {
       "id": "2.automation.show_repository",
       "title": "1. The repository",
-      "steps": [{
-        "action": "executeVSCodeCommand",
-        "command": "vscode.open",
-        "args": "https://github.com/estruyf/presentation-m365-playwright-github-actions"
-      }]
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "vscode.open",
+          "args": "https://github.com/estruyf/presentation-m365-playwright-github-actions"
+        }
+      ]
     },
     {
       "title": "2. Configure the TOPT",
-      "steps": [{
-        "action": "executeVSCodeCommand",
-        "command": "vscode.open",
-        "args": "https://github.com/estruyf/presentation-m365-playwright-github-actions/settings/secrets/actions"
-      }]
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "vscode.open",
+          "args": "https://github.com/estruyf/presentation-m365-playwright-github-actions/settings/secrets/actions"
+        }
+      ]
     },
     {
       "title": "🪧 Step 2",
-      "steps": [{
-        "action": "snippet",
-        "contentPath": "./defaults/show_slide.json",
-        "args": {
-          "SLIDES_URL": "http://localhost:3030/35"
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/35"
+          }
         }
-      }]
+      ]
     },
     {
       "id": "2.automation.create_workflow",
       "title": "3. Create workflow",
-      "steps": [{
-        "action": "create",
-        "path": ".github/workflows/e2e.yml",
-        "contentPath": "2.automation/step1.yml"
-      },
-      {
-        "action": "open",
-        "path": ".github/workflows/e2e.yml"
-      }]
+      "steps": [
+        {
+          "action": "create",
+          "path": ".github/workflows/e2e.yml",
+          "contentPath": "2.automation/step1.yml"
+        },
+        {
+          "action": "open",
+          "path": ".github/workflows/e2e.yml"
+        }
+      ]
     },
     {
       "title": "4. Highlight work dir",
-      "steps": [{
-        "action": "highlight",
-        "path": ".github/workflows/e2e.yml",
-        "position": "15:17"
-      }]
+      "steps": [
+        {
+          "action": "highlight",
+          "path": ".github/workflows/e2e.yml",
+          "position": "15:17"
+        }
+      ]
     },
     {
       "id": "2.automation.add_playwright",
@@ -79,6 +92,10 @@
     {
       "title": "6. Commit and run first tests",
       "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.killAll"
+        },
         {
           "action": "executeTerminalCommand",
           "command": "git add . && git commit -m 'First test run' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"

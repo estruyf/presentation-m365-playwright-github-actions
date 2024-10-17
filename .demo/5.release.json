@@ -2,32 +2,41 @@
   "$schema": "https://elio.dev/demo-time.schema.json",
   "title": "5.release",
   "description": "",
-  "demos": [{
+  "demos": [
+    {
       "title": "🪧 Release",
-      "steps": [{
-        "action": "snippet",
-        "contentPath": "./defaults/show_slide.json",
-        "args": {
-          "SLIDES_URL": "http://localhost:3030/58"
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/58"
+          }
         }
-      }]
+      ]
     },
     {
       "id": "5.release.update_release",
       "title": "1. Release flow",
-      "steps": [{
-        "action": "create",
-        "path": ".github/workflows/e2e.yml",
-        "contentPath": "5.release/step1.yml"
-      },
-      {
-        "action": "open",
-        "path": ".github/workflows/e2e.yml"
-      }]
+      "steps": [
+        {
+          "action": "create",
+          "path": ".github/workflows/e2e.yml",
+          "contentPath": "5.release/step1.yml"
+        },
+        {
+          "action": "open",
+          "path": ".github/workflows/e2e.yml"
+        }
+      ]
     },
     {
       "title": "2. Commit and run",
       "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.killAll"
+        },
         {
           "action": "executeTerminalCommand",
           "command": "git add . && git commit -m 'Time to release' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"
@@ -36,63 +45,72 @@
     },
     {
       "title": "3. Build",
-      "steps": [{
-        "action": "unselect",
-        "path": ".github/workflows/e2e.yml"
-      },
-      {
-        "action": "highlight",
-        "position": "10:21",
-        "path": ".github/workflows/e2e.yml"
-      }]
+      "steps": [
+        {
+          "action": "unselect",
+          "path": ".github/workflows/e2e.yml"
+        },
+        {
+          "action": "highlight",
+          "position": "10:21",
+          "path": ".github/workflows/e2e.yml"
+        }
+      ]
     },
     {
       "title": "4. Build action",
       "steps": [
-      {
-        "action": "open",
-        "path": ".github/actions/build/action.yml"
-      }]
+        {
+          "action": "open",
+          "path": ".github/actions/build/action.yml"
+        }
+      ]
     },
     {
       "title": "5. Deploy to test",
-      "steps": [{
-        "action": "unselect",
-        "path": ".github/workflows/e2e.yml"
-      },
-      {
-        "action": "highlight",
-        "position": "23:42",
-        "path": ".github/workflows/e2e.yml"
-      }]
+      "steps": [
+        {
+          "action": "unselect",
+          "path": ".github/workflows/e2e.yml"
+        },
+        {
+          "action": "highlight",
+          "position": "23:42",
+          "path": ".github/workflows/e2e.yml"
+        }
+      ]
     },
     {
       "title": "6. Deploy action",
       "steps": [
-      {
-        "action": "open",
-        "path": ".github/actions/deploy/action.yml"
-      }]
+        {
+          "action": "open",
+          "path": ".github/actions/deploy/action.yml"
+        }
+      ]
     },
     {
       "title": "7. E2E on test",
-      "steps": [{
-        "action": "unselect",
-        "path": ".github/workflows/e2e.yml"
-      },
-      {
-        "action": "highlight",
-        "position": "44:65",
-        "path": ".github/workflows/e2e.yml"
-      }]
+      "steps": [
+        {
+          "action": "unselect",
+          "path": ".github/workflows/e2e.yml"
+        },
+        {
+          "action": "highlight",
+          "position": "44:65",
+          "path": ".github/workflows/e2e.yml"
+        }
+      ]
     },
     {
       "title": "8. E2E action",
       "steps": [
-      {
-        "action": "open",
-        "path": ".github/actions/playwright/action.yml"
-      }]
-    },
+        {
+          "action": "open",
+          "path": ".github/actions/playwright/action.yml"
+        }
+      ]
+    }
   ]
 }

@@ -2,97 +2,127 @@
   "$schema": "https://elio.dev/demo-time.schema.json",
   "title": "1.recap",
   "description": "",
-  "demos": [{
+  "demos": [
+    {
       "title": "🪧 Recap",
-      "steps": [{
-        "action": "snippet",
-        "contentPath": "./defaults/show_slide.json",
-        "args": {
-          "SLIDES_URL": "http://localhost:3030/4"
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/4"
+          }
         }
-      }]
+      ]
     },
     {
       "id": "1.recap.show_web_part",
       "title": "1. Show web part",
-      "steps": [{
-        "action": "executeVSCodeCommand",
-        "command": "vscode.open",
-        "args": "https://struyfconsultingdev.sharepoint.com/sites/Playwright"
-      }]
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "vscode.open",
+          "args": "https://struyfconsultingdev.sharepoint.com/sites/Playwright"
+        }
+      ]
     },
     {
       "id": "1.recap.show_tests",
       "title": "2. Show tests",
-      "steps": [{
-        "action": "open",
-        "path": "e2e/tests/pages/sharepoint.spec.ts"
-      }]
+      "steps": [
+        {
+          "action": "open",
+          "path": "e2e/tests/pages/sharepoint.spec.ts"
+        }
+      ]
     },
     {
       "title": "🪧 Running the tests",
-      "steps": [{
-        "action": "snippet",
-        "contentPath": "./defaults/show_slide.json",
-        "args": {
-          "SLIDES_URL": "http://localhost:3030/14"
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/14"
+          }
         }
-      }]
+      ]
     },
     {
       "id": "1.recap.run_tests",
       "title": "3. Run tests",
-      "steps": [{
-        "action": "executeTerminalCommand",
-        "command": "cd e2e && npm run test:ui"
-      }]
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.killAll"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "cd e2e && npm run test:ui"
+        }
+      ]
     },
     {
       "title": "🪧 Auth",
-      "steps": [{
-        "action": "snippet",
-        "contentPath": "./defaults/show_slide.json",
-        "args": {
-          "SLIDES_URL": "http://localhost:3030/15"
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/15"
+          }
         }
-      }]
+      ]
     },
     {
       "id": "1.recap.security_config",
       "title": "4. Security config",
-      "steps": [{
-        "action": "executeVSCodeCommand",
-        "command": "vscode.open",
-        "args": "https://mysignins.microsoft.com/security-info"
-      }]
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "vscode.open",
+          "args": "https://mysignins.microsoft.com/security-info"
+        }
+      ]
     },
     {
       "title": "5. Generate TOPT",
-      "steps": [{
-        "action": "executeVSCodeCommand",
-        "command": "workbench.action.terminal.new"
-      }, {
-        "action": "executeTerminalCommand",
-        "command": "clipboard=\"$(pbpaste)\" && node ./e2e/scripts/2fa.test.mjs $clipboard"
-      }]
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.killAll"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.new"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "clipboard=\"$(pbpaste)\" && node ./e2e/scripts/2fa.test.mjs $clipboard"
+        }
+      ]
     },
     {
       "title": "🪧 Login process",
-      "steps": [{
-        "action": "snippet",
-        "contentPath": "./defaults/show_slide.json",
-        "args": {
-          "SLIDES_URL": "http://localhost:3030/24"
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/24"
+          }
         }
-      }]
+      ]
     },
     {
       "id": "1.recap.show_login_process",
       "title": "6. Show login flow",
-      "steps": [{
-        "action": "open",
-        "path": "e2e/tests/login.setup.ts"
-      }]
+      "steps": [
+        {
+          "action": "open",
+          "path": "e2e/tests/login.setup.ts"
+        }
+      ]
     },
     {
       "title": "7. Update login flow",
@@ -106,10 +136,16 @@
     },
     {
       "title": "8. Run tests",
-      "steps": [{
-        "action": "executeTerminalCommand",
-        "command": "cd e2e && npm run test:ui"
-      }]
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.killAll"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "cd e2e && npm run test:ui"
+        }
+      ]
     }
   ]
 }

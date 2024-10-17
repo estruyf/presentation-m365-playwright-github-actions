@@ -5,6 +5,7 @@ node_modules/
 
 /screenshots/*.png
 .env
+.env.token
 /tests/**/*-darwin.png
 
 download.js

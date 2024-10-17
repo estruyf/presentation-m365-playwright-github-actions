@@ -6,7 +6,7 @@ import { MsTeamsReporterOptions } from "playwright-msteams-reporter";
  * https://github.com/motdotla/dotenv
  */
 if (process.env.NODE_ENV === "development") {
-  require("dotenv").config({ path: ".env" });
+  require("dotenv").config({ path: [".env", ".env.token"] });
 }
 
 const config: PlaywrightTestConfig<{}, {}> = {

@@ -7,8 +7,7 @@
   },
   "demoTime.highlightBorderColor": "rgb(237, 18, 146)",
   "workbench.colorCustomizations": {
-    "activityBar.activeBorder": "#0969da",
     "activityBar.activeBackground": "#eaeef2"
   },
-  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.colorTheme": "Front Matter CMS Theme",
 }

@@ -25,7 +25,7 @@ setup("authenticate", async ({ page }) => {
   await passwordInput.fill(process.env.M365_PASSWORD || "");
   await page.locator("input[type=submit]").click();
 
-  // Check if there is an Microsft Authenticator app prompt
+  // Check if there is a Microsft Authenticator app prompt
   const otherWayLink = page.locator("a#signInAnotherWay");
   await otherWayLink.waitFor({ timeout: 2000 });
   if (await otherWayLink.isVisible()) {

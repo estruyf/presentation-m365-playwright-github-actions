@@ -127,6 +127,16 @@
           "command": "git add . && git commit -m 'Reporting' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"
         }
       ]
+    },
+    {
+      "title": "7. Verify MS Teams",
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "vscode.open",
+          "args": "https://teams.microsoft.com/l/channel/19%3A99bd70fca53d42f98d06a77ed3254294%40thread.tacv2/General?groupId=0daed572-448a-4d0a-8ea8-b6a49e4625b3&tenantId=b32d3268-2794-435f-865f-ab4779cae11e"
+        }
+      ]
     }
   ]
 }

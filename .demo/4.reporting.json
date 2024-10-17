@@ -30,7 +30,7 @@
             "MAIN_FILE": "e2e/playwright.config.ts",
             "CONTENT_PATH": "./4.reporting/step1.ts",
             "CONTENT_POSITION": "70",
-            "HIGHLIGHT_POSITION": "71:78"
+            "HIGHLIGHT_POSITION": "71:79"
           }
         }
       ]

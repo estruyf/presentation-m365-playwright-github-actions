@@ -1,4 +1,5 @@
 {
+  "editor.formatOnSave": false,
   "remoteControl.enable": true,
   "remoteControl.port": 37105,
   "files.associations": {

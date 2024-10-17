@@ -105,8 +105,8 @@
           "args": {
             "MAIN_FILE": ".github/workflows/e2e.yml",
             "CONTENT_PATH": "./4.reporting/step4.yml",
-            "CONTENT_POSITION": "50",
-            "HIGHLIGHT_POSITION": "51"
+            "CONTENT_POSITION": "51",
+            "HIGHLIGHT_POSITION": "52"
           }
         }
       ]

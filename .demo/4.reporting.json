@@ -36,6 +36,25 @@
       ]
     },
     {
+      "title": "2. Update workflow",
+      "steps": [
+        {
+          "action": "create",
+          "path": ".github/workflows/e2e.yml",
+          "contentPath": "4.reporting/step2.yml"
+        },
+        {
+          "action": "open",
+          "path": ".github/workflows/e2e.yml"
+        },
+        {
+          "action": "highlight",
+          "position": "55:56",
+          "path": ".github/workflows/e2e.yml"
+        }
+      ]
+    },
+    {
       "title": "🪧 Notifying",
       "steps": [
         {
@@ -49,7 +68,7 @@
     },
     {
       "id": "4.reporting.webhook_creation",
-      "title": "2. Webhook creation",
+      "title": "3. Webhook creation",
       "steps": [
         {
           "action": "executeVSCodeCommand",
@@ -63,14 +82,14 @@
       ]
     },
     {
-      "title": "3. Add reporter",
+      "title": "4. Add reporter",
       "steps": [
         {
           "action": "snippet",
           "contentPath": "./defaults/insert_and_highlight.json",
           "args": {
             "MAIN_FILE": "e2e/playwright.config.ts",
-            "CONTENT_PATH": "./4.reporting/step2.ts",
+            "CONTENT_PATH": "./4.reporting/step3.ts",
             "CONTENT_POSITION": "79",
             "HIGHLIGHT_POSITION": "88:96"
           }
@@ -78,14 +97,14 @@
       ]
     },
     {
-      "title": "4. Update workflow",
+      "title": "5. Update workflow",
       "steps": [
         {
           "action": "snippet",
           "contentPath": "./defaults/insert_and_highlight.json",
           "args": {
             "MAIN_FILE": ".github/workflows/e2e.yml",
-            "CONTENT_PATH": "./4.reporting/step3.yml",
+            "CONTENT_PATH": "./4.reporting/step4.yml",
             "CONTENT_POSITION": "50",
             "HIGHLIGHT_POSITION": "51"
           }
@@ -93,7 +112,7 @@
       ]
     },
     {
-      "title": "5. Commit and run",
+      "title": "6. Commit and run",
       "steps": [
         {
           "action": "executeVSCodeCommand",

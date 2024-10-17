@@ -61,6 +61,7 @@ jobs:
           M365_OTP_SECRET: ${{ secrets.M365_OTP_SECRET }}
           AZURE_STORAGE_URL: ${{ vars.AZURE_STORAGE_URL }}
           AZURE_STORAGE_SAS: ${{ secrets.AZURE_STORAGE_SAS }}
+          environment: test
 
   deploy_prod:
     name: Deploy to production
@@ -93,3 +94,4 @@ jobs:
           M365_OTP_SECRET: ${{ secrets.M365_OTP_SECRET }}
           AZURE_STORAGE_URL: ${{ vars.AZURE_STORAGE_URL }}
           AZURE_STORAGE_SAS: ${{ secrets.AZURE_STORAGE_SAS }}
+          environment: production

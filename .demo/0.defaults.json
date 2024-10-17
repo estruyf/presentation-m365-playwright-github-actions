@@ -2,29 +2,36 @@
   "$schema": "https://elio.dev/demo-time.schema.json",
   "title": "0.defaults",
   "description": "",
-  "demos": [{
-    "title": "🪧 Open slides",
-    "steps": [
-      {
-        "action": "executeVSCodeCommand",
-        "command": "workbench.action.terminal.killAll"
-      },
-      // Clear the auth folder
-      {
-        "action": "executeTerminalCommand",
-        "command": "rm -rf ./e2e/playwright"
-      },
-      {
-        "action": "executeTerminalCommand",
-        "command": "touch ./e2e/.env && touch ./e2e/.env.token"
-      },
-      {
-        "action": "snippet",
-        "contentPath": "./defaults/show_slide.json",
-        "args": {
-          "SLIDES_URL": "http://localhost:3030/"
+  "demos": [
+    {
+      "title": "🪧 Open slides",
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.killAll"
+        },
+        // Clear the auth folder
+        {
+          "action": "executeTerminalCommand",
+          "command": "rm -rf ./e2e/playwright"
+        },
+        // Clear snapshots
+        {
+          "action": "executeTerminalCommand",
+          "command": "rm -rf ./e2e/tests/pages/sharepoint.spec.ts-snapshots"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "touch ./e2e/.env && touch ./e2e/.env.token"
+        },
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/"
+          }
         }
-      }
-    ]
-  }]
+      ]
+    }
+  ]
 }

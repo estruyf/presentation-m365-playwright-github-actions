@@ -2,9 +2,10 @@ name: Release
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
+      - dev
 
 jobs:
   build:
@@ -50,10 +51,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Wait for 1 minute before running the E2E tests
-      - name: Sleep for 1 minutes
-        run: sleep 60s
-
       - name: Run the E2E test
         uses: ./.github/actions/playwright
         with:
@@ -62,7 +59,8 @@ jobs:
           M365_USERNAME: ${{ secrets.M365_USERNAME }}
           M365_PASSWORD: ${{ secrets.M365_PASSWORD }}
           M365_OTP_SECRET: ${{ secrets.M365_OTP_SECRET }}
-          environment: test
+          AZURE_STORAGE_URL: ${{ vars.AZURE_STORAGE_URL }}
+          AZURE_STORAGE_SAS: ${{ secrets.AZURE_STORAGE_SAS }}
 
   deploy_prod:
     name: Deploy to production
@@ -85,9 +83,6 @@ jobs:
           APP_CATALOG_URL: ${{ vars.APP_CATALOG_URL }}
           CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
 
-      - name: Sleep for 1 minutes
-        run: sleep 60s
-
       - name: Run the E2E test
         uses: ./.github/actions/playwright
         with:
@@ -96,4 +91,5 @@ jobs:
           M365_USERNAME: ${{ secrets.M365_USERNAME }}
           M365_PASSWORD: ${{ secrets.M365_PASSWORD }}
           M365_OTP_SECRET: ${{ secrets.M365_OTP_SECRET }}
-          environment: production
+          AZURE_STORAGE_URL: ${{ vars.AZURE_STORAGE_URL }}
+          AZURE_STORAGE_SAS: ${{ secrets.AZURE_STORAGE_SAS }}

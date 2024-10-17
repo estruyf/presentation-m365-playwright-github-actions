@@ -47,12 +47,16 @@
       "title": "3. Build",
       "steps": [
         {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.killAll"
+        },
+        {
           "action": "unselect",
           "path": ".github/workflows/e2e.yml"
         },
         {
           "action": "highlight",
-          "position": "10:21",
+          "position": "11:22",
           "path": ".github/workflows/e2e.yml"
         }
       ]
@@ -75,7 +79,7 @@
         },
         {
           "action": "highlight",
-          "position": "23:42",
+          "position": "24:43",
           "path": ".github/workflows/e2e.yml"
         }
       ]
@@ -98,7 +102,7 @@
         },
         {
           "action": "highlight",
-          "position": "44:65",
+          "position": "45:63",
           "path": ".github/workflows/e2e.yml"
         }
       ]

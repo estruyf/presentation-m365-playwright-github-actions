@@ -27,6 +27,12 @@ inputs:
   M365_OTP_SECRET:
     description: 'OTP secret for the M365 environment'
     required: true
+  AZURE_STORAGE_URL:
+    description: 'URL of the Azure Storage Account'
+    required: true
+  AZURE_STORAGE_SAS:
+    description: 'SAS token for the Azure Storage Account'
+    required: true
   
 runs:
   using: composite
@@ -62,6 +68,11 @@ runs:
       if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
       run: npx playwright install --with-deps chromium
 
+    # Give SharePoint some time to fully provision the solution
+    - name: Sleep for 1 minutes
+      run: sleep 60s
+      shell: bash
+
     - name: Run Playwright tests
       run: npx playwright test
       shell: bash
@@ -72,6 +83,8 @@ runs:
         M365_PASSWORD: ${{ inputs.M365_PASSWORD }}
         M365_OTP_SECRET: ${{ inputs.M365_OTP_SECRET }}
         M365_WEBHOOK_URL: ${{ inputs.M365_WEBHOOK_URL }}
+        AZURE_STORAGE_URL: ${{ inputs.AZURE_STORAGE_URL }}
+        AZURE_STORAGE_SAS: ${{ inputs.AZURE_STORAGE_SAS }}
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}

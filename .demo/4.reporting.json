@@ -48,6 +48,10 @@
           "path": ".github/workflows/e2e.yml"
         },
         {
+          "action": "waitForTimeout",
+          "timeout": 500
+        },
+        {
           "action": "highlight",
           "position": "55:56",
           "path": ".github/workflows/e2e.yml"

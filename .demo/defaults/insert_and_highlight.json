@@ -10,6 +10,10 @@
     "position": "{CONTENT_POSITION}"
   },
   {
+    "action": "waitForTimeout",
+    "timeout": 500
+  },
+  {
     "action": "highlight",
     "path": "{MAIN_FILE}",
     "position": "{HIGHLIGHT_POSITION}"

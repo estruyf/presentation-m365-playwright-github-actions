@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: ./e2e/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -56,12 +57,12 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           name: snapshots
-          path: tests/**/*-snapshots/
+          path: "**/tests/**/*-snapshots/"
           retention-days: 30
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
           name: report
-          path: playwright-report/
+          path: "**/playwright-report/"
           retention-days: 30

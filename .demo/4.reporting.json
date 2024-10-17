@@ -20,6 +20,10 @@
       "title": "1. Add GH Actions Reporter",
       "steps": [
         {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
+        {
           "action": "snippet",
           "contentPath": "./defaults/insert_and_highlight.json",
           "args": {
@@ -47,6 +51,10 @@
       "id": "4.reporting.webhook_creation",
       "title": "2. Webhook creation",
       "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
         {
           "action": "executeVSCodeCommand",
           "command": "vscode.open",

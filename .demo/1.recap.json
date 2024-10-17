@@ -119,6 +119,10 @@
       "title": "6. Show login flow",
       "steps": [
         {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
+        {
           "action": "open",
           "path": "e2e/tests/login.setup.ts"
         }

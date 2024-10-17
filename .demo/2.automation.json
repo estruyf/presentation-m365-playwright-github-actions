@@ -53,6 +53,10 @@
       "title": "3. Create workflow",
       "steps": [
         {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
+        {
           "action": "create",
           "path": ".github/workflows/e2e.yml",
           "contentPath": "2.automation/step1.yml"
@@ -70,6 +74,18 @@
           "action": "highlight",
           "path": ".github/workflows/e2e.yml",
           "position": "15:17"
+        }
+      ]
+    },
+    {
+      "title": "🪧 Step 3",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/38"
+          }
         }
       ]
     },

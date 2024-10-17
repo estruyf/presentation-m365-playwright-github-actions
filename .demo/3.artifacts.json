@@ -30,7 +30,7 @@
         },
         {
           "action": "highlight",
-          "position": "55:67",
+          "position": "56:68",
           "path": ".github/workflows/e2e.yml"
         }
       ]

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DefaultButton, Spinner, TextField } from '@fluentui/react';
+import { DefaultButton, Icon, Spinner, TextField } from '@fluentui/react';
 import { WebPartContext } from '@microsoft/sp-webpart-base';
 import { SPHttpClient } from '@microsoft/sp-http-base';
 import './StickerOverview.module.scss';
@@ -97,25 +97,27 @@ export const StickerOverview: React.FunctionComponent<IStickerOverviewProps> = (
         )
       }
 
-      <div className='flex justify-between items-center mb-4'>
-        <div className='flex gap-4 w-2/3'>
-          <TextField
-            placeholder='Filter by stock'
-            value={filter}
-            onChange={(_, value) => setFilter(value || '')}
-            data-testid="sticker_inventory__filter__input"
-            className='w-96' />
+      <div className='grid grid-cols-3 gap-4 justify-between items-center mb-4'>
+        <TextField
+          type='number'
+          placeholder='Filter by stock'
+          value={filter}
+          onChange={(_, value) => setFilter(value || '')}
+          data-testid="sticker_inventory__filter__input"
+          className='w-full' />
 
+        <div>
           <DefaultButton
             onClick={() => fetchStickers(parseInt(filter) || 0)}
             data-testid="sticker_inventory__filter__button"
           >
-            Filter
+            <Icon iconName='Filter' />
+            &nbsp; Filter
           </DefaultButton>
         </div>
 
         <div
-          className='text-lg font-bold w-1/3 text-right'
+          className='text-lg font-bold text-right w-full'
           data-testid="sticker_inventory__refresh">
           Last refresh: {(new Date()).toLocaleTimeString()}
         </div>

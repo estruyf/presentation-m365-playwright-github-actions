@@ -38,8 +38,8 @@ export const StickerOverview: React.FunctionComponent<IStickerOverviewProps> = (
     const httpClient = context.spHttpClient;
     let listApiUrl = `${webAbsoluteUrl}/_api/web/lists/getbytitle('Inventory')/items?$select=Id,Title,Description,Image,Price,Total`;
 
-    // Order by the ID
-    listApiUrl += '&$orderby=Id desc';
+    // Order by the Modified
+    listApiUrl += '&$orderby=Modified desc';
 
     if (minimalAmount > 0) {
       listApiUrl += `&$filter=Total ge ${minimalAmount}`;
@@ -69,7 +69,7 @@ export const StickerOverview: React.FunctionComponent<IStickerOverviewProps> = (
 
   const getStockColor = (stock: number): string => {
     if (stock > 25) {
-      return '';
+      return 'bg-green-50';
     } else if (stock > 10 && stock <= 25) {
       return 'bg-yellow-100';
     } else {

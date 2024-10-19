@@ -7,7 +7,10 @@
   },
   "demoTime.highlightBorderColor": "rgb(237, 18, 146)",
   "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#eaeef2"
+    "activityBar.activeBackground": "#eaeef2",
+    "titleBar.activeBackground": "#000",
+    "titleBar.activeForeground": "#fff",
+    "titleBar.inactiveBackground": "#00000099",
   },
   "workbench.colorTheme": "Front Matter CMS Theme",
 }

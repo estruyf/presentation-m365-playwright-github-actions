@@ -15,6 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Create the auth file based on the contents from `secrets.M365_AUTH_SESSION`
+      - name: Create the auth file
+        run: echo ${{ secrets.M365_AUTH_SESSION }} > auth.json
+
       - name: Run the E2E test
         uses: ./.github/actions/playwright
         with:

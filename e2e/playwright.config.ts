@@ -59,7 +59,8 @@ const config: PlaywrightTestConfig<{}, {}> = {
         viewport: { width: 2560, height: 1440 },
         headless: true,
         // storageState: "playwright/.auth/user.json",
-        storageState: process.env.M365_AUTH_SESSION
+        // storageState: process.env.M365_AUTH_SESSION
+        storageState: "auth.json"
       },
       // dependencies: ["setup"],
     },

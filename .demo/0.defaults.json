@@ -4,25 +4,24 @@
   "description": "",
   "demos": [
     {
-      "title": "🪧 Open slides",
+      "title": "🗑️ Clean up",
       "steps": [
         {
           "action": "executeVSCodeCommand",
           "command": "workbench.action.terminal.killAll"
         },
-        // Clear the auth folder
         {
           "action": "executeTerminalCommand",
-          "command": "rm -rf ./e2e/playwright"
-        },
-        // Clear snapshots
+          "command": "rm -rf ./e2e/playwright && rm -rf ./e2e/tests/pages/sharepoint.spec.ts-snapshots && touch ./e2e/.env/.env.variables && touch ./e2e/.env.token && touch ./e2e/.env/.env.account"
+        }
+      ]
+    },
+    {
+      "title": "🪧 Open slides",
+      "steps": [
         {
-          "action": "executeTerminalCommand",
-          "command": "rm -rf ./e2e/tests/pages/sharepoint.spec.ts-snapshots"
-        },
-        {
-          "action": "executeTerminalCommand",
-          "command": "touch ./e2e/.env && touch ./e2e/.env.token"
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.killAll"
         },
         {
           "action": "snippet",

@@ -4,8 +4,9 @@ node_modules/
 /playwright/.cache/
 
 /screenshots/*.png
-.env
-.env.token
+.env/.env.account
+.env/.env.token
+.env/.env.variables
 /tests/**/*-darwin.png
 
 download.js

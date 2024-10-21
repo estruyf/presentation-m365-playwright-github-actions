@@ -61,7 +61,7 @@ const config: PlaywrightTestConfig<{}, {}> = {
         // storageState: "playwright/.auth/user.json",
         storageState: process.env.M365_AUTH_SESSION
       },
-      dependencies: ["setup"],
+      // dependencies: ["setup"],
     },
   ],
 };

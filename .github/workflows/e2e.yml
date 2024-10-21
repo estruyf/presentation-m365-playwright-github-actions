@@ -32,5 +32,4 @@ jobs:
           M365_OTP_SECRET: ${{ secrets.M365_OTP_SECRET }}
           AZURE_STORAGE_URL: ${{ vars.AZURE_STORAGE_URL }}
           AZURE_STORAGE_SAS: ${{ secrets.AZURE_STORAGE_SAS }}
-          M365_AUTH_SESSION: ${{ secrets.M365_AUTH_SESSION }}
           environment: production

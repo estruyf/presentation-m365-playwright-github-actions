@@ -88,7 +88,6 @@ runs:
         M365_WEBHOOK_URL: ${{ inputs.M365_WEBHOOK_URL }}
         AZURE_STORAGE_URL: ${{ inputs.AZURE_STORAGE_URL }}
         AZURE_STORAGE_SAS: ${{ inputs.AZURE_STORAGE_SAS }}
-        M365_AUTH_SESSION: ${{ inputs.M365_AUTH_SESSION }}
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}

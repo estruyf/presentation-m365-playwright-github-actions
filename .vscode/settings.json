@@ -13,4 +13,6 @@
     "titleBar.inactiveBackground": "#00000099",
   },
   "workbench.colorTheme": "Front Matter CMS Theme",
+  "demoTime.showClock": false,
+  "demoTime.timer": 50
 }

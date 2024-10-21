@@ -106,17 +106,16 @@
       ]
     },
     {
-      "title": "6. Commit and run first tests",
+      "title": "🪧 First run",
       "steps": [
         {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.killAll"
-        },
-        {
-          "action": "executeTerminalCommand",
-          "command": "git add . && git commit -m 'First test run' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://localhost:3030/43"
+          }
         }
       ]
-    }
+    },
   ]
 }

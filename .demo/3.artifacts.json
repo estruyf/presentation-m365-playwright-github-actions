@@ -10,7 +10,7 @@
           "action": "snippet",
           "contentPath": "./defaults/show_slide.json",
           "args": {
-            "SLIDES_URL": "http://localhost:3030/43"
+            "SLIDES_URL": "http://localhost:3030/45"
           }
         }
       ]
@@ -19,6 +19,10 @@
       "id": "3.artifacts.upload_artifacts",
       "title": "1. Upload artifacts",
       "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
         {
           "action": "create",
           "path": ".github/workflows/e2e.yml",

@@ -17,7 +17,8 @@ jobs:
 
       # Create the auth file based on the contents from `secrets.M365_AUTH_SESSION`
       - name: Create the auth file
-        run: node ./e2e/scripts/create.auth.mjs
+        run: node ./scripts/create.auth.mjs
+        working-directory: ./e2e
         env:
           M365_AUTH_SESSION: ${{ secrets.M365_AUTH_SESSION }}
 

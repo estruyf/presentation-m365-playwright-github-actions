@@ -47,10 +47,10 @@ const config: PlaywrightTestConfig<{}, {}> = {
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: "setup",
-      testMatch: "login.setup.ts",
-    },
+    // {
+    //   name: "setup",
+    //   testMatch: "login.setup.ts",
+    // },
     {
       name: "chromium",
       use: {
@@ -58,7 +58,8 @@ const config: PlaywrightTestConfig<{}, {}> = {
         // userAgent: `${devices["Desktop Chrome"].userAgent} Teams/1.4.00.32771 Electron/10.4.7`,
         viewport: { width: 2560, height: 1440 },
         headless: true,
-        storageState: "playwright/.auth/user.json",
+        // storageState: "playwright/.auth/user.json",
+        storageState: process.env.M365_AUTH_SESSION
       },
       dependencies: ["setup"],
     },

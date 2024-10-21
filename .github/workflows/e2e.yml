@@ -8,45 +8,9 @@ on:
       - dev
 
 jobs:
-  build:
-    name: Build SPFx
+  testing:
+    name: e2e testing with auth session
     runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build SPPKG
-        uses: ./.github/actions/build
-        with:
-          ARTIFACT_NAME: spfx-sticker-inventory
-          PACKAGE_FOLDER: packages/spfx-sticker-inventory
-
-  deploy_test:
-    name: Deploy to test
-    runs-on: ubuntu-latest
-    environment:
-      name: test
-      url: ${{ vars.M365_PAGE_URL }}
-    needs: build
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Deploy SPFx
-        uses: ./.github/actions/deploy
-        with:
-          ARTIFACT_NAME: spfx-sticker-inventory
-          PACKAGE_NAME: sticker-inventory.sppkg
-          ENTRA_TENANT_ID: ${{ vars.ENTRA_TENANT_ID }}
-          ENTRA_APP_ID: ${{ vars.ENTRA_APP_ID }}
-          APP_CATALOG_URL: ${{ vars.APP_CATALOG_URL }}
-          CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
-
-  e2e_test:
-    name: E2E Testing on test
-    runs-on: ubuntu-latest
-    environment: test
-    needs: deploy_test
 
     steps:
       - uses: actions/checkout@v4
@@ -61,37 +25,5 @@ jobs:
           M365_OTP_SECRET: ${{ secrets.M365_OTP_SECRET }}
           AZURE_STORAGE_URL: ${{ vars.AZURE_STORAGE_URL }}
           AZURE_STORAGE_SAS: ${{ secrets.AZURE_STORAGE_SAS }}
-          environment: test
-
-  deploy_prod:
-    name: Deploy to production
-    runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: ${{ vars.M365_PAGE_URL }}
-    needs: e2e_test
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Deploy SPFx
-        uses: ./.github/actions/deploy
-        with:
-          ARTIFACT_NAME: spfx-sticker-inventory
-          PACKAGE_NAME: sticker-inventory.sppkg
-          ENTRA_TENANT_ID: ${{ vars.ENTRA_TENANT_ID }}
-          ENTRA_APP_ID: ${{ vars.ENTRA_APP_ID }}
-          APP_CATALOG_URL: ${{ vars.APP_CATALOG_URL }}
-          CERTIFICATE_BASE64: ${{ secrets.CERTIFICATE_BASE64 }}
-
-      - name: Run the E2E test
-        uses: ./.github/actions/playwright
-        with:
-          M365_PAGE_URL: ${{ vars.M365_PAGE_URL }}
-          M365_WEBHOOK_URL: ${{ vars.M365_WEBHOOK_URL }}
-          M365_USERNAME: ${{ secrets.M365_USERNAME }}
-          M365_PASSWORD: ${{ secrets.M365_PASSWORD }}
-          M365_OTP_SECRET: ${{ secrets.M365_OTP_SECRET }}
-          AZURE_STORAGE_URL: ${{ vars.AZURE_STORAGE_URL }}
-          AZURE_STORAGE_SAS: ${{ secrets.AZURE_STORAGE_SAS }}
+          M365_AUTH_SESSION: ${{ secrets.M365_AUTH_SESSION }}
           environment: production

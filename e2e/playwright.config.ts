@@ -52,6 +52,13 @@ const config: PlaywrightTestConfig<{}, {}> = {
     //   testMatch: "login.setup.ts",
     // },
     {
+      name: "refresh",
+      testMatch: "auth.setup.ts",
+      use: {
+        storageState: "auth.json"
+      },
+    },
+    {
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
@@ -62,6 +69,12 @@ const config: PlaywrightTestConfig<{}, {}> = {
         storageState: "auth.json"
       },
       // dependencies: ["setup"],
+      dependencies: ["refresh"],
+      teardown: 'cleanup auth',
+    },
+    {
+      name: 'cleanup auth',
+      testMatch: "cleanup.auth.ts",
     },
   ],
 };

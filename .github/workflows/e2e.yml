@@ -35,6 +35,7 @@ jobs:
           environment: production
 
       - name: Update the auth session
+        if: ${{ !cancelled() }}
         working-directory: ./e2e
         run: |
           echo "Updating the auth session"

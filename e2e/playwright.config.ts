@@ -75,6 +75,9 @@ const config: PlaywrightTestConfig<{}, {}> = {
     {
       name: 'refresh auth',
       testMatch: "cleanup.auth.ts",
+      use: {
+        storageState: "playwright/.auth/m365.json",
+      },
     },
   ],
 };

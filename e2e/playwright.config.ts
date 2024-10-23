@@ -51,13 +51,13 @@ const config: PlaywrightTestConfig<{}, {}> = {
     //   name: "setup",
     //   testMatch: "login.setup.ts",
     // },
-    {
-      name: "refresh",
-      testMatch: "auth.setup.ts",
-      use: {
-        storageState: "auth.json"
-      },
-    },
+    // {
+    //   name: "refresh",
+    //   testMatch: "auth.setup.ts",
+    //   use: {
+    //     storageState: "auth.json"
+    //   },
+    // },
     {
       name: "chromium",
       use: {
@@ -69,11 +69,11 @@ const config: PlaywrightTestConfig<{}, {}> = {
         storageState: "auth.json"
       },
       // dependencies: ["setup"],
-      dependencies: ["refresh"],
-      teardown: 'cleanup auth',
+      // dependencies: ["refresh"],
+      teardown: 'refresh auth',
     },
     {
-      name: 'cleanup auth',
+      name: 'refresh auth',
       testMatch: "cleanup.auth.ts",
     },
   ],

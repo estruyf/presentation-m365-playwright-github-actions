@@ -21,6 +21,10 @@
       "steps": [
         {
           "action": "executeVSCodeCommand",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
+        {
+          "action": "executeVSCodeCommand",
           "command": "vscode.open",
           "args": "https://github.com/estruyf/presentation-m365-playwright-github-actions"
         }
@@ -84,7 +88,7 @@
           "action": "snippet",
           "contentPath": "./defaults/show_slide.json",
           "args": {
-            "SLIDES_URL": "http://localhost:3030/38"
+            "SLIDES_URL": "http://localhost:3030/39"
           }
         }
       ]
@@ -93,6 +97,10 @@
       "id": "2.automation.add_playwright",
       "title": "5. Add Playwright",
       "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
         {
           "action": "snippet",
           "contentPath": "./defaults/insert_and_highlight.json",
@@ -112,7 +120,7 @@
           "action": "snippet",
           "contentPath": "./defaults/show_slide.json",
           "args": {
-            "SLIDES_URL": "http://localhost:3030/43"
+            "SLIDES_URL": "http://localhost:3030/45"
           }
         }
       ]

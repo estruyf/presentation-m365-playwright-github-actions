@@ -80,6 +80,10 @@
       "steps": [
         {
           "action": "executeVSCodeCommand",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
+        {
+          "action": "executeVSCodeCommand",
           "command": "vscode.open",
           "args": "https://mysignins.microsoft.com/security-info"
         }

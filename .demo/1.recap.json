@@ -10,7 +10,7 @@
           "action": "snippet",
           "contentPath": "./defaults/show_slide.json",
           "args": {
-            "SLIDES_URL": "http://localhost:3030/4"
+            "SLIDES_URL": "http://localhost:3030/3"
           }
         }
       ]
@@ -69,7 +69,7 @@
           "action": "snippet",
           "contentPath": "./defaults/show_slide.json",
           "args": {
-            "SLIDES_URL": "http://localhost:3030/15"
+            "SLIDES_URL": "http://localhost:3030/14"
           }
         }
       ]

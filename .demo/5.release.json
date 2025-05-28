@@ -2,31 +2,30 @@
   "$schema": "https://elio.dev/demo-time.schema.json",
   "title": "5.release",
   "description": "",
+  "version": 2,
   "demos": [
     {
-      "title": "🪧 Release",
+      "title": "Release",
+      "description": "",
       "steps": [
         {
-          "action": "snippet",
-          "contentPath": "./defaults/show_slide.json",
-          "args": {
-            "SLIDES_URL": "http://localhost:3030/64"
-          }
+          "action": "openSlide",
+          "path": "/.demo/slides/release.md"
         }
-      ]
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
     },
     {
       "id": "5.release.update_release",
-      "title": "1. Release flow",
+      "title": "Release flow",
       "steps": [
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.toggleSidebarVisibility"
-        },
         {
           "action": "create",
           "path": ".github/workflows/e2e.yml",
-          "contentPath": "5.release/step1.yml"
+          "contentPath": ".demo/5.release/step1.yml"
         },
         {
           "action": "open",
@@ -35,7 +34,7 @@
       ]
     },
     {
-      "title": "2. Commit and run",
+      "title": "Commit and run",
       "steps": [
         {
           "action": "executeVSCodeCommand",
@@ -48,7 +47,7 @@
       ]
     },
     {
-      "title": "3. Build",
+      "title": "Build",
       "steps": [
         {
           "action": "executeVSCodeCommand",
@@ -61,12 +60,13 @@
         {
           "action": "highlight",
           "position": "11:22",
-          "path": ".github/workflows/e2e.yml"
+          "path": ".github/workflows/e2e.yml",
+          "zoom": 4
         }
       ]
     },
     {
-      "title": "4. Build action",
+      "title": "Build action",
       "steps": [
         {
           "action": "open",
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "title": "5. Deploy to test",
+      "title": "Deploy to test",
       "steps": [
         {
           "action": "unselect",
@@ -84,12 +84,13 @@
         {
           "action": "highlight",
           "position": "24:43",
-          "path": ".github/workflows/e2e.yml"
+          "path": ".github/workflows/e2e.yml",
+          "zoom": 4
         }
       ]
     },
     {
-      "title": "6. Deploy action",
+      "title": "Deploy action",
       "steps": [
         {
           "action": "open",
@@ -98,7 +99,7 @@
       ]
     },
     {
-      "title": "7. E2E on test",
+      "title": "E2E on test",
       "steps": [
         {
           "action": "unselect",
@@ -106,17 +107,28 @@
         },
         {
           "action": "highlight",
-          "position": "45:63",
-          "path": ".github/workflows/e2e.yml"
+          "position": "54:64",
+          "path": ".github/workflows/e2e.yml",
+          "zoom": 4
         }
       ]
     },
     {
-      "title": "8. E2E action",
+      "title": "E2E action",
       "steps": [
         {
           "action": "open",
           "path": ".github/actions/playwright/action.yml"
+        }
+      ]
+    },
+    {
+      "title": "Watch GitHub Action",
+      "description": "",
+      "steps": [
+        {
+          "action": "openWebsite",
+          "url": "https://github.com/estruyf/presentation-m365-playwright-github-actions/actions"
         }
       ]
     }

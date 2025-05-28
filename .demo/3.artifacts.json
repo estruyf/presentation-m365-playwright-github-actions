@@ -55,6 +55,16 @@
           "command": "git add . && git commit -m 'Added artifacts' && git push && gh browse -n | xargs -I {} echo {}/actions | xargs open"
         }
       ]
+    },
+    {
+      "title": "Open GitHub",
+      "description": "",
+      "steps": [
+        {
+          "action": "openWebsite",
+          "url": "https://github.com/estruyf/presentation-m365-playwright-github-actions/actions"
+        }
+      ]
     }
   ]
 }

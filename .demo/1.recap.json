@@ -119,9 +119,15 @@
       "description": "",
       "steps": [
         {
+          "action": "create",
+          "path": "e2e/tests/login.setup.ts",
+          "contentPath": ".demo/1.recap/mfa.setup.ts"
+        },
+        {
           "action": "highlight",
           "path": "/e2e/tests/mfa.setup.ts",
-          "position": "28:36"
+          "position": "28:36",
+          "zoom": 4
         }
       ]
     },
@@ -130,14 +136,10 @@
       "description": "",
       "steps": [
         {
-          "action": "create",
-          "path": "e2e/tests/login.setup.ts",
-          "contentPath": ".demo/1.recap/mfa.setup.ts"
-        },
-        {
           "action": "highlight",
           "path": "/e2e/tests/mfa.setup.ts",
-          "position": "38:49"
+          "position": "38:49",
+          "zoom": 4
         }
       ]
     },

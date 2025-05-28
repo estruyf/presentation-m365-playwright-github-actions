@@ -36,7 +36,7 @@
           "url": "https://github.com/estruyf/presentation-m365-playwright-github-actions/settings/secrets/actions"
         }
       ]
-    },  
+    },
     {
       "title": "The workflow",
       "description": "",
@@ -67,30 +67,33 @@
       ]
     },
     {
-      "title": "4. Highlight work dir",
+      "title": "Highlight work dir",
       "steps": [
         {
           "action": "highlight",
           "path": ".github/workflows/e2e.yml",
-          "position": "15:17"
+          "position": "15:17",
+          "zoom": 4
         }
       ]
     },
     {
-      "title": "🪧 Step 3",
+      "title": "Playwright",
+      "description": "",
       "steps": [
         {
-          "action": "snippet",
-          "contentPath": "./defaults/show_slide.json",
-          "args": {
-            "SLIDES_URL": "http://localhost:3030/39"
-          }
+          "action": "openSlide",
+          "path": "/.demo/slides/playwright.md"
         }
-      ]
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
     },
     {
       "id": "2.automation.add_playwright",
-      "title": "5. Add Playwright",
+      "title": "Add Playwright",
       "steps": [
         {
           "action": "executeVSCodeCommand",

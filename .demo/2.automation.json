@@ -9,6 +9,10 @@
       "description": "",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
           "action": "openSlide",
           "path": "/.demo/slides/automation.md"
         }
@@ -41,6 +45,10 @@
       "title": "The workflow",
       "description": "",
       "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
         {
           "action": "openSlide",
           "path": "/.demo/slides/the-workflow.md"
@@ -81,6 +89,10 @@
       "title": "Playwright",
       "description": "",
       "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
         {
           "action": "openSlide",
           "path": "/.demo/slides/playwright.md"

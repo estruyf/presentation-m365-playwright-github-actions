@@ -79,6 +79,10 @@
       "description": "",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
           "action": "openSlide",
           "path": "/.demo/slides/authentication.md"
         }
@@ -104,6 +108,10 @@
       "title": "Login process",
       "description": "",
       "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
         {
           "action": "openSlide",
           "path": "/.demo/slides/login-process.md"

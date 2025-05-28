@@ -2,17 +2,18 @@
   "$schema": "https://elio.dev/demo-time.schema.json",
   "title": "0.defaults",
   "description": "",
+  "version": 2,
   "demos": [
     {
-      "title": "🗑️ Clean up",
+      "title": "Start",
       "steps": [
         {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.killAll"
+          "action": "snippet",
+          "contentPath": ".demo/snippets/cleanup.json"
         },
         {
-          "action": "executeTerminalCommand",
-          "command": "rm -rf ./e2e/playwright && rm -rf ./e2e/tests/pages/sharepoint.spec.ts-snapshots && touch ./e2e/.env/.env.variables && touch ./e2e/.env.token && touch ./e2e/.env/.env.account"
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
         }
       ]
     },

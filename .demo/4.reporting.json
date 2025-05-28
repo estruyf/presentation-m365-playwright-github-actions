@@ -9,6 +9,10 @@
       "description": "",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
           "action": "openSlide",
           "path": "/.demo/slides/reporting.md"
         }
@@ -62,6 +66,10 @@
       "title": "Notifying",
       "description": "",
       "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
         {
           "action": "openSlide",
           "path": "/.demo/slides/notifying.md"

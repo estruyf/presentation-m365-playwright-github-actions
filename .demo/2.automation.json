@@ -96,15 +96,11 @@
       "title": "Add Playwright",
       "steps": [
         {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.toggleSidebarVisibility"
-        },
-        {
           "action": "snippet",
-          "contentPath": "./defaults/insert_and_highlight.json",
+          "contentPath": ".demo/defaults/insert_and_highlight.json",
           "args": {
             "MAIN_FILE": ".github/workflows/e2e.yml",
-            "CONTENT_PATH": "2.automation/step3.yml",
+            "CONTENT_PATH": ".demo/2.automation/step3.yml",
             "CONTENT_POSITION": "22",
             "HIGHLIGHT_POSITION": ""
           }
@@ -112,14 +108,38 @@
       ]
     },
     {
-      "title": "🪧 First run",
+      "title": "Highlight playwright version",
+      "description": "",
       "steps": [
         {
-          "action": "snippet",
-          "contentPath": "./defaults/show_slide.json",
-          "args": {
-            "SLIDES_URL": "http://localhost:3030/45"
-          }
+          "action": "highlight",
+          "path": "/.github/workflows/e2e.yml",
+          "position": "31:35",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Highlight cache",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/.github/workflows/e2e.yml",
+          "position": "37:42",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Highlight cache hit",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/.github/workflows/e2e.yml",
+          "position": "44:46",
+          "zoom": 4
         }
       ]
     }

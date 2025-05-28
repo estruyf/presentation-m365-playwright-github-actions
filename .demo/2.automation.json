@@ -2,68 +2,63 @@
   "$schema": "https://elio.dev/demo-time.schema.json",
   "title": "2.automation",
   "description": "",
+  "version": 2,
   "demos": [
     {
-      "title": "🪧 Automation",
+      "title": "Automation",
+      "description": "",
       "steps": [
         {
-          "action": "snippet",
-          "contentPath": "./defaults/show_slide.json",
-          "args": {
-            "SLIDES_URL": "http://localhost:3030/26"
-          }
+          "action": "openSlide",
+          "path": "/.demo/slides/automation.md"
         }
-      ]
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
     },
     {
       "id": "2.automation.show_repository",
-      "title": "1. The repository",
+      "title": "The repository",
       "steps": [
         {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.toggleSidebarVisibility"
-        },
-        {
-          "action": "executeVSCodeCommand",
-          "command": "vscode.open",
-          "args": "https://github.com/estruyf/presentation-m365-playwright-github-actions"
+          "action": "openWebsite",
+          "url": "https://github.com/estruyf/presentation-m365-playwright-github-actions"
         }
       ]
     },
     {
-      "title": "2. Configure the TOPT",
+      "title": "Configure the TOPT",
       "steps": [
         {
-          "action": "executeVSCodeCommand",
-          "command": "vscode.open",
-          "args": "https://github.com/estruyf/presentation-m365-playwright-github-actions/settings/secrets/actions"
+          "action": "openWebsite",
+          "url": "https://github.com/estruyf/presentation-m365-playwright-github-actions/settings/secrets/actions"
         }
       ]
-    },
+    },  
     {
-      "title": "🪧 Step 2",
+      "title": "The workflow",
+      "description": "",
       "steps": [
         {
-          "action": "snippet",
-          "contentPath": "./defaults/show_slide.json",
-          "args": {
-            "SLIDES_URL": "http://localhost:3030/35"
-          }
+          "action": "openSlide",
+          "path": "/.demo/slides/the-workflow.md"
         }
-      ]
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
     },
     {
       "id": "2.automation.create_workflow",
-      "title": "3. Create workflow",
+      "title": "Create workflow",
       "steps": [
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.toggleSidebarVisibility"
-        },
         {
           "action": "create",
           "path": ".github/workflows/e2e.yml",
-          "contentPath": "2.automation/step1.yml"
+          "contentPath": ".demo/2.automation/step1.yml"
         },
         {
           "action": "open",
@@ -124,6 +119,6 @@
           }
         }
       ]
-    },
+    }
   ]
 }

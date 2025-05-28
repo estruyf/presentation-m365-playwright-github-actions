@@ -16,6 +16,7 @@
   {
     "action": "highlight",
     "path": "{MAIN_FILE}",
-    "position": "{HIGHLIGHT_POSITION}"
+    "position": "{HIGHLIGHT_POSITION}",
+    "zoom": 4
   }
 ]

@@ -1,0 +1,180 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "1.recap",
+  "description": "",
+  "version": 2,
+  "demos": [
+    {
+      "id": "1.recap.show_web_part",
+      "title": "Show web part",
+      "steps": [
+        {
+          "action": "openWebsite",
+          "url": "https://struyfconsultingdev.sharepoint.com/sites/Playwright"
+        }
+      ]
+    },
+    {
+      "id": "1.recap.show_tests",
+      "title": "Show tests",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
+          "action": "open",
+          "path": "e2e/tests/pages/sharepoint.spec.ts"
+        }
+      ]
+    },
+    {
+      "title": "Highlight test 1",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/pages/sharepoint.spec.ts",
+          "position": "29:37",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Highlight test 2",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/pages/sharepoint.spec.ts",
+          "position": "39:56",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Highlight test 3",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/pages/sharepoint.spec.ts",
+          "position": "104:122",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "id": "1.recap.run_tests",
+      "title": "Run tests",
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.killAll"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "cd e2e && npm run test:ui"
+        }
+      ]
+    },
+    {
+      "title": "Authentication",
+      "description": "",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/authentication.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Creation of TOTP",
+      "description": "",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
+          "action": "highlight",
+          "path": "/e2e/scripts/2fa.test.mjs",
+          "position": "1:13",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Login process",
+      "description": "",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/login-process.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Highlight other way",
+      "description": "",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
+          "action": "create",
+          "path": "e2e/tests/login.setup.ts",
+          "contentPath": ".demo/1.recap/mfa.setup.ts"
+        },
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/mfa.setup.ts",
+          "position": "28:36",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Highlight totp",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/mfa.setup.ts",
+          "position": "38:49",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Run tests",
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.killAll"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "cd e2e && npm run test:ui"
+        }
+      ]
+    }
+  ]
+}

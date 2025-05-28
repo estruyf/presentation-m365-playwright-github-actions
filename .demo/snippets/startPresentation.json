@@ -1,0 +1,9 @@
+[
+  {
+    "action": "setTheme",
+    "theme": "GitHub Dark"
+  },
+  {
+    "action": "setPresentationView"
+  }
+]

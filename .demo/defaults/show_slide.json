@@ -1,0 +1,11 @@
+[{
+  "action": "executeVSCodeCommand",
+  "command": "simpleBrowser.show",
+  "args": "{SLIDES_URL}"
+}, {
+  "action": "executeVSCodeCommand",
+  "command": "workbench.action.closeSidebar"
+}, {
+  "action": "executeVSCodeCommand",
+  "command": "workbench.action.closePanel"
+}]

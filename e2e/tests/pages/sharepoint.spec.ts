@@ -1,8 +1,6 @@
 import { test, expect, Page } from "@playwright/test";
 import { waitForImages } from "helpers";
 
-// test.describe.configure({ mode: "serial" });
-
 test.describe(`Validate sticker inventory`, () => {
   let page: Page;
 

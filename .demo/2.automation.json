@@ -1,0 +1,179 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "2.automation",
+  "description": "",
+  "version": 2,
+  "demos": [
+    {
+      "title": "Automation",
+      "description": "",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/automation.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "id": "2.automation.show_repository",
+      "title": "The repository",
+      "steps": [
+        {
+          "action": "openWebsite",
+          "url": "https://github.com/estruyf/presentation-m365-playwright-github-actions"
+        }
+      ]
+    },
+    {
+      "title": "Configure the TOPT",
+      "steps": [
+        {
+          "action": "openWebsite",
+          "url": "https://github.com/estruyf/presentation-m365-playwright-github-actions/settings/secrets/actions"
+        }
+      ]
+    },
+    {
+      "title": "The workflow",
+      "description": "",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/the-workflow.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "id": "2.automation.create_workflow",
+      "title": "Create workflow",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
+          "action": "create",
+          "path": ".github/workflows/e2e.yml",
+          "contentPath": ".demo/2.automation/step1.yml"
+        },
+        {
+          "action": "open",
+          "path": ".github/workflows/e2e.yml"
+        }
+      ]
+    },
+    {
+      "title": "Highlight work dir",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": ".github/workflows/e2e.yml",
+          "position": "15:17",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Playwright",
+      "description": "",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/playwright.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "id": "2.automation.add_playwright",
+      "title": "Add Playwright",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
+          "action": "snippet",
+          "contentPath": ".demo/defaults/insert_and_highlight.json",
+          "args": {
+            "MAIN_FILE": ".github/workflows/e2e.yml",
+            "CONTENT_PATH": ".demo/2.automation/step3.yml",
+            "CONTENT_POSITION": "22",
+            "HIGHLIGHT_POSITION": ""
+          }
+        }
+      ]
+    },
+    {
+      "title": "Highlight playwright version",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/.github/workflows/e2e.yml",
+          "position": "31:35",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Highlight cache",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/.github/workflows/e2e.yml",
+          "position": "37:42",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Highlight cache hit",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/.github/workflows/e2e.yml",
+          "position": "44:46",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Run tests",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/.github/workflows/e2e.yml",
+          "position": "48:54",
+          "zoom": 4
+        }
+      ]
+    }
+  ]
+}

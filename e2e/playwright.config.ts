@@ -6,7 +6,7 @@ import { MsTeamsReporterOptions } from "playwright-msteams-reporter";
  * https://github.com/motdotla/dotenv
  */
 if (process.env.NODE_ENV === "development") {
-  require("dotenv").config({ path: ".env" });
+  require("dotenv").config({ path: ["./.env/.env.account", "./.env/.env.token", "./.env/.env.variables"] });
 }
 
 const config: PlaywrightTestConfig<{}, {}> = {
@@ -49,7 +49,7 @@ const config: PlaywrightTestConfig<{}, {}> = {
   projects: [
     {
       name: "setup",
-      testMatch: "mfa.setup.ts",
+      testMatch: "login.setup.ts",
     },
     {
       name: "chromium",
@@ -66,23 +66,25 @@ const config: PlaywrightTestConfig<{}, {}> = {
 };
 
 if (config.reporter && config.reporter instanceof Array) {
-  let runUrl = "";
-  if (process.env.GITHUB_RUN_ID) {
-    const runId = process.env.GITHUB_RUN_ID;
-    const repo = process.env.GITHUB_REPOSITORY;
-    runUrl = `${process.env.GITHUB_SERVER_URL}/${repo}/actions/runs/${runId}`;
-  }
-
   if (process.env.NODE_ENV !== "development") {
     config.reporter.push(["html"]);
     config.reporter.push([
       "@estruyf/github-actions-reporter",
       {
         showError: true,
+        showArtifactsLink: true,
         azureStorageSAS: process.env.AZURE_STORAGE_SAS,
         azureStorageUrl: process.env.AZURE_STORAGE_URL,
       },
     ]);
+    
+    let runUrl = "";
+    if (process.env.GITHUB_RUN_ID) {
+      const runId = process.env.GITHUB_RUN_ID;
+      const repo = process.env.GITHUB_REPOSITORY;
+      runUrl = `${process.env.GITHUB_SERVER_URL}/${repo}/actions/runs/${runId}`;
+    }
+
     config.reporter.push([
       "playwright-msteams-reporter",
       <MsTeamsReporterOptions>{
@@ -92,6 +94,8 @@ if (config.reporter && config.reporter instanceof Array) {
         mentionOnFailure: process.env.M365_USERNAME,
       },
     ]);
+
+
   } else {
     config.reporter.push(["html"]);
   }

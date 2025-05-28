@@ -1,0 +1,47 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "6.the_end",
+  "description": "",
+  "version": 2,
+  "demos": [
+    {
+      "title": "The end",
+      "description": "",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/startPresentation.json"
+        },
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/the-end.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Clean up",
+      "description": "",
+      "steps": [
+        {
+          "action": "closeAll"
+        },
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.toggleFullScreen"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "showCustomTitleBar"
+        }
+      ]
+    }
+  ]
+}

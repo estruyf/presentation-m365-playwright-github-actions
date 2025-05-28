@@ -1,0 +1,17 @@
+[
+  {
+    "action": "closeAll"
+  },
+  {
+    "action": "executeVSCodeCommand",
+    "command": "workbench.action.toggleFullScreen"
+  },
+  {
+    "action": "executeVSCodeCommand",
+    "command": "hideCustomTitleBarInFullScreen"
+  },
+  {
+    "action": "executeVSCodeCommand",
+    "command": "demo-time.togglePresentationMode"
+  }
+]

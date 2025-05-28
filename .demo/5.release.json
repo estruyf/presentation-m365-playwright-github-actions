@@ -27,6 +27,10 @@
       "title": "Release flow",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
           "action": "create",
           "path": ".github/workflows/e2e.yml",
           "contentPath": ".demo/5.release/step1.yml"

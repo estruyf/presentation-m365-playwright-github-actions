@@ -19,6 +19,10 @@
       "title": "Show tests",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
           "action": "open",
           "path": "e2e/tests/pages/sharepoint.spec.ts"
         }
@@ -97,6 +101,10 @@
       "description": "",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
           "action": "highlight",
           "path": "/e2e/scripts/2fa.test.mjs",
           "position": "1:13",
@@ -126,6 +134,10 @@
       "title": "Highlight other way",
       "description": "",
       "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
         {
           "action": "create",
           "path": "e2e/tests/login.setup.ts",

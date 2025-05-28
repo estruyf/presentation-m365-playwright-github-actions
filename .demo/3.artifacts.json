@@ -27,6 +27,10 @@
       "title": "Upload artifacts",
       "steps": [
         {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
           "action": "create",
           "path": ".github/workflows/e2e.yml",
           "contentPath": ".demo/3.artifacts/step1.yml"

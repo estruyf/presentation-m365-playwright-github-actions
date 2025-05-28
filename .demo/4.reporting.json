@@ -28,6 +28,10 @@
       "steps": [
         {
           "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
+        {
+          "action": "snippet",
           "contentPath": ".demo/defaults/insert_and_highlight.json",
           "args": {
             "MAIN_FILE": "e2e/playwright.config.ts",
@@ -93,6 +97,10 @@
     {
       "title": "Add reporter",
       "steps": [
+        {
+          "action": "snippet",
+          "contentPath": ".demo/snippets/endPresentation.json"
+        },
         {
           "action": "snippet",
           "contentPath": ".demo/defaults/insert_and_highlight.json",

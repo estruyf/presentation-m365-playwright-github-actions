@@ -1,18 +1,8 @@
 {
   "editor.formatOnSave": false,
-  "remoteControl.enable": true,
-  "remoteControl.port": 37105,
-  "files.associations": {
-    "**/.demo/**/*.json": "jsonc"
-  },
-  "demoTime.highlightBorderColor": "rgb(237, 18, 146)",
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#eaeef2",
-    "titleBar.activeBackground": "#000",
-    "titleBar.activeForeground": "#fff",
-    "titleBar.inactiveBackground": "#00000099",
-  },
-  "workbench.colorTheme": "Front Matter CMS Theme",
-  "demoTime.showClock": true,
-  "demoTime.timer": 50
+  "demoTime.highlightBorderColor": "transparent",
+  "demoTime.highlightBackground": "rgba(19, 142, 151, 0.2)",
+  "demoTime.highlightOpacity": 0.5,
+  "demoTime.highlightBlur": 2,
+  "editor.hover.enabled": false,
 }

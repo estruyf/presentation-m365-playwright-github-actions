@@ -17,20 +17,22 @@
       ]
     },
     {
-      "title": "🪧 Open slides",
+      "title": "Intro",
+      "description": "",
       "steps": [
         {
           "action": "executeVSCodeCommand",
           "command": "workbench.action.terminal.killAll"
         },
         {
-          "action": "snippet",
-          "contentPath": "./defaults/show_slide.json",
-          "args": {
-            "SLIDES_URL": "http://localhost:3030/"
-          }
+          "action": "openSlide",
+          "path": "/.demo/slides/intro.md"
         }
-      ]
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
     }
   ]
 }

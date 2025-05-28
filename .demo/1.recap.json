@@ -2,33 +2,21 @@
   "$schema": "https://elio.dev/demo-time.schema.json",
   "title": "1.recap",
   "description": "",
+  "version": 2,
   "demos": [
     {
-      "title": "🪧 Recap",
-      "steps": [
-        {
-          "action": "snippet",
-          "contentPath": "./defaults/show_slide.json",
-          "args": {
-            "SLIDES_URL": "http://localhost:3030/3"
-          }
-        }
-      ]
-    },
-    {
       "id": "1.recap.show_web_part",
-      "title": "1. Show web part",
+      "title": "Show web part",
       "steps": [
         {
-          "action": "executeVSCodeCommand",
-          "command": "vscode.open",
-          "args": "https://struyfconsultingdev.sharepoint.com/sites/Playwright"
+          "action": "openWebsite",
+          "url": "https://struyfconsultingdev.sharepoint.com/sites/Playwright"
         }
       ]
     },
     {
       "id": "1.recap.show_tests",
-      "title": "2. Show tests",
+      "title": "Show tests",
       "steps": [
         {
           "action": "open",
@@ -37,20 +25,44 @@
       ]
     },
     {
-      "title": "🪧 Running the tests",
+      "title": "Highlight test 1",
+      "description": "",
       "steps": [
         {
-          "action": "snippet",
-          "contentPath": "./defaults/show_slide.json",
-          "args": {
-            "SLIDES_URL": "http://localhost:3030/13"
-          }
+          "action": "highlight",
+          "path": "/e2e/tests/pages/sharepoint.spec.ts",
+          "position": "29:37",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Highlight test 2",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/pages/sharepoint.spec.ts",
+          "position": "39:56",
+          "zoom": 4
+        }
+      ]
+    },
+    {
+      "title": "Highlight test 3",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/pages/sharepoint.spec.ts",
+          "position": "104:122",
+          "zoom": 4
         }
       ]
     },
     {
       "id": "1.recap.run_tests",
-      "title": "3. Run tests",
+      "title": "Run tests",
       "steps": [
         {
           "action": "executeVSCodeCommand",
@@ -63,87 +75,74 @@
       ]
     },
     {
-      "title": "🪧 Auth",
+      "title": "Authentication",
+      "description": "",
       "steps": [
         {
-          "action": "snippet",
-          "contentPath": "./defaults/show_slide.json",
-          "args": {
-            "SLIDES_URL": "http://localhost:3030/14"
-          }
+          "action": "openSlide",
+          "path": "/.demo/slides/authentication.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Creation of TOTP",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "/e2e/scripts/2fa.test.mjs",
+          "position": "1:13",
+          "zoom": 4
         }
       ]
     },
     {
-      "id": "1.recap.security_config",
-      "title": "4. Security config",
+      "title": "Login process",
+      "description": "",
       "steps": [
         {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.toggleSidebarVisibility"
-        },
+          "action": "openSlide",
+          "path": "/.demo/slides/login-process.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Highlight other way",
+      "description": "",
+      "steps": [
         {
-          "action": "executeVSCodeCommand",
-          "command": "vscode.open",
-          "args": "https://mysignins.microsoft.com/security-info"
+          "action": "highlight",
+          "path": "/e2e/tests/mfa.setup.ts",
+          "position": "28:36"
         }
       ]
     },
     {
-      "title": "5. Generate TOPT",
-      "steps": [
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.killAll"
-        },
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.new"
-        },
-        {
-          "action": "executeTerminalCommand",
-          "command": "clipboard=\"$(pbpaste)\" && node ./e2e/scripts/2fa.test.mjs $clipboard"
-        }
-      ]
-    },
-    {
-      "title": "🪧 Login process",
-      "steps": [
-        {
-          "action": "snippet",
-          "contentPath": "./defaults/show_slide.json",
-          "args": {
-            "SLIDES_URL": "http://localhost:3030/24"
-          }
-        }
-      ]
-    },
-    {
-      "id": "1.recap.show_login_process",
-      "title": "6. Show login flow",
-      "steps": [
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.toggleSidebarVisibility"
-        },
-        {
-          "action": "open",
-          "path": "e2e/tests/login.setup.ts"
-        }
-      ]
-    },
-    {
-      "title": "7. Update login flow",
+      "title": "Highlight totp",
+      "description": "",
       "steps": [
         {
           "action": "create",
           "path": "e2e/tests/login.setup.ts",
-          "contentPath": "./1.recap/mfa.setup.ts"
+          "contentPath": ".demo/1.recap/mfa.setup.ts"
+        },
+        {
+          "action": "highlight",
+          "path": "/e2e/tests/mfa.setup.ts",
+          "position": "38:49"
         }
       ]
     },
     {
-      "title": "8. Run tests",
+      "title": "Run tests",
       "steps": [
         {
           "action": "executeVSCodeCommand",

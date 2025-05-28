@@ -2,31 +2,30 @@
   "$schema": "https://elio.dev/demo-time.schema.json",
   "title": "3.artifacts",
   "description": "",
+  "version": 2,
   "demos": [
     {
-      "title": "🪧 Artifacts",
+      "title": "Artifacts",
+      "description": "",
       "steps": [
         {
-          "action": "snippet",
-          "contentPath": "./defaults/show_slide.json",
-          "args": {
-            "SLIDES_URL": "http://localhost:3030/47"
-          }
+          "action": "openSlide",
+          "path": "/.demo/slides/artifacts.md"
         }
-      ]
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
     },
     {
       "id": "3.artifacts.upload_artifacts",
-      "title": "1. Upload artifacts",
+      "title": "Upload artifacts",
       "steps": [
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.toggleSidebarVisibility"
-        },
         {
           "action": "create",
           "path": ".github/workflows/e2e.yml",
-          "contentPath": "3.artifacts/step1.yml"
+          "contentPath": ".demo/3.artifacts/step1.yml"
         },
         {
           "action": "open",
@@ -39,12 +38,13 @@
         {
           "action": "highlight",
           "position": "56:68",
-          "path": ".github/workflows/e2e.yml"
+          "path": ".github/workflows/e2e.yml",
+          "zoom": 4
         }
       ]
     },
     {
-      "title": "2. Commit and run",
+      "title": "Commit and run",
       "steps": [
         {
           "action": "executeVSCodeCommand",
